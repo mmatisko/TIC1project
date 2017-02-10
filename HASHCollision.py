@@ -3,6 +3,7 @@ import logging
 import argparse
 from pybloomfilter import BloomFilter
 # from memory_profiler import profile
+import redis
 
 
 class HASHCollision(object):
@@ -10,7 +11,7 @@ class HASHCollision(object):
     bf = None
     number = None
     length = None
-    hash_dict = dict()
+    redis_database = None
     array_access_counter = 0
     bloom_filter_size = 200000000
 
@@ -19,6 +20,14 @@ class HASHCollision(object):
         self.bf = BloomFilter(self.bloom_filter_size, 0.01, param.bloom_file)
         self.length = param.length
         self.number = param.number
+
+        self.redis_database = redis.StrictRedis()
+        '''
+        self.redis_database = redis.StrictRedis(
+            host='127.0.0.1',
+            port=6379,
+            password=None)
+        '''
 
 #    @profile
     def findCollision(self):
@@ -33,7 +42,7 @@ class HASHCollision(object):
         hashed_number = hashlib.sha256(self.number.encode()).hexdigest()[:self.length]
         self.bf.add(hashed_number)
 
-        self.hash_dict[hashed_number] = number
+        self.redis_database.set(hashed_number, number)
 
         while (True):
             number = hashed_number
@@ -42,18 +51,18 @@ class HASHCollision(object):
             if (hashed_number in self.bf):
                 self.array_access_counter += 1
                 logging.debug("Array access counter: " + str(self.array_access_counter))
-                logging.debug("Current number of hashes in dict: " + str(len(self.hash_dict)))
+                logging.debug("Current number of hashes in dict: " + str(self.redis_database.dbsize()))
 
-                if (hashed_number in self.hash_dict):
-                    print("Start number: " + self.hash_dict[hashed_number] + " Hash: " + hashed_number)
+                if self.redis_database.exists(hashed_number):
+                    print("Start number: " + self.redis_database.get(hashed_number) + " Hash: " + hashed_number)
                     print("End number:   " + number + " Hash: " + hashed_number)
                     print("Array access counter: " + str(self.array_access_counter))
-                    print("Total number of hashes in list: " + str(len(self.hash_dict)))
-                    logging.debug("Total number of hashes in dict: " + str(len(self.hash_dict)))
+                    print("Total number of hashes in list: " + str(self.redis_database.dbsize()))
+                    logging.debug("Total number of hashes in dict: " + str(self.redis_database.dbsize()))
                     break
 
             self.bf.add(hashed_number)
-            self.hash_dict[hashed_number] = number
+            self.redis_database.set(hashed_number,  number)
 
 
 class ParseParams(object):
@@ -108,4 +117,4 @@ if __name__ == "__main__":
         HC.findCollision()
     except KeyboardInterrupt:
         logging.debug("KeyboardInterupt")
-        logging.debug("Number of hashes in dict: " + str(len(HC.hash_dict)))
+        logging.debug("Number of hashes in dict: " + str(HC.redis_database.dbsize()))
