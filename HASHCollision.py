@@ -3,6 +3,7 @@ import logging
 import argparse
 from pybloomfilter import BloomFilter
 # from memory_profiler import profile
+from collections import defaultdict
 
 
 class HASHCollision(object):
@@ -10,7 +11,7 @@ class HASHCollision(object):
     bf = None
     number = None
     length = None
-    hash_dict = dict()
+    hash_dict = defaultdict(str)
     array_access_counter = 0
     bloom_filter_size = 200000000
 
