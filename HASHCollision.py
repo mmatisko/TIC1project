@@ -22,15 +22,12 @@ class HASHCollision(object):
         self.number = param.number
 
         self.redis_database = redis.StrictRedis()
-        '''
-        self.redis_database = redis.StrictRedis(
-            host='127.0.0.1',
-            port=6379,
-            password=None)
-        '''
 
 #    @profile
     def findCollision(self):
+
+        n = 0
+        pipe = self.redis_database.pipeline()
 
         logging.debug("Start of collision finding")
         number = self.number
@@ -53,16 +50,24 @@ class HASHCollision(object):
                 logging.debug("Array access counter: " + str(self.array_access_counter))
                 logging.debug("Current number of hashes in dict: " + str(self.redis_database.dbsize()))
 
+                pipe.execute()
+                pipe = self.redis_database.pipeline()
+
                 if self.redis_database.exists(hashed_number):
                     print("Start number: " + self.redis_database.get(hashed_number) + " Hash: " + hashed_number)
                     print("End number:   " + number + " Hash: " + hashed_number)
                     print("Array access counter: " + str(self.array_access_counter))
-                    print("Total number of hashes in list: " + str(self.redis_database.dbsize()))
                     logging.debug("Total number of hashes in dict: " + str(self.redis_database.dbsize()))
                     break
 
             self.bf.add(hashed_number)
-            self.redis_database.set(hashed_number,  number)
+            pipe.set(hashed_number, number)
+
+            n += 1
+            if (n % 100000) == 0:
+                n = 0
+                pipe.execute()
+                pipe = self.redis_database.pipeline()
 
 
 class ParseParams(object):
