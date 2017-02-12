@@ -14,6 +14,8 @@ class HASHCollision(object):
     redis_database = None
     array_access_counter = 0
     bloom_filter_size = 200000000
+    hash_length = None
+    batch_size = 100000
 
     def __init__(self, param):
 
@@ -21,7 +23,18 @@ class HASHCollision(object):
         self.length = param.length
         self.number = param.number
 
-        self.redis_database = redis.StrictRedis()
+        self.redis_database = redis.StrictRedis(
+                host='localhost', port=6379)
+
+        self.hash_length = self.length/2
+        logging.debug("\n\
+                    HASHCollision initialization\n\
+                    Redis database - localhost:6379\n\
+                    <internal implementation>\n\
+                    Bloom filter - storage:" + str(self.bloom_filter_size) + ", error rate: 0.01\n\
+                    Hash length (hexa) " + str(self.length) + "\n\
+                    HSET hash length: " + str(self.hash_length) + "\n\
+                    Batch size: " + str(self.batch_size))
 
 #    @profile
     def findCollision(self):
@@ -32,39 +45,46 @@ class HASHCollision(object):
         logging.debug("Start of collision finding")
         number = self.number
 
-        logging.debug("Start string: " + str(number))
-        logging.debug("Length: " + str(self.length))
-        logging.debug("Bloom filter size: " + str(self.bloom_filter_size))
-
-        hashed_number = hashlib.sha256(self.number.encode()).hexdigest()[:self.length]
+        hashed_number = hashlib.sha256(self.number).hexdigest()[:self.length]
         self.bf.add(hashed_number)
 
-        self.redis_database.set(hashed_number, number)
+        self.redis_database.hset(hashed_number[:self.hash_length], hashed_number, number)
 
         while (True):
             number = hashed_number
-            hashed_number = hashlib.sha256(number.encode()).hexdigest()[:self.length]
+            hashed_number = hashlib.sha256(number).hexdigest()[:self.length]
 
             if (hashed_number in self.bf):
                 self.array_access_counter += 1
-                logging.debug("Array access counter: " + str(self.array_access_counter))
-                logging.debug("Current number of hashes in dict: " + str(self.redis_database.dbsize()))
+                logging.debug("\n\
+                    Array access counter: " + str(self.array_access_counter))
 
                 pipe.execute()
                 pipe = self.redis_database.pipeline()
 
-                if self.redis_database.exists(hashed_number):
-                    print("Start number: " + self.redis_database.get(hashed_number) + " Hash: " + hashed_number)
-                    print("End number:   " + number + " Hash: " + hashed_number)
-                    print("Array access counter: " + str(self.array_access_counter))
-                    logging.debug("Total number of hashes in dict: " + str(self.redis_database.dbsize()))
+                if self.redis_database.hexists(hashed_number[:self.hash_length], hashed_number):
+                    print("First  number: " + self.redis_database.hget(hashed_number[:self.hash_length], hashed_number) + " Hash: " + hashed_number)
+                    print("Second number: " + number + " Hash: " + hashed_number)
+
+                    size = int(self.redis_database.info()['used_memory'])
+                    print('Database size: %s bytes, %s MB') % (size, size / 1024 / 1024)
+
+                    logging.debug("\n\
+                    Search finished\n\
+                    First  number: " + self.redis_database.hget(hashed_number[:self.hash_length], hashed_number) + " Hash: " + hashed_number + "\n\
+                    Second number: " + number + " Hash: " + hashed_number + "\n\
+                    Array access counter: " + str(self.array_access_counter) + "\n\
+                    Clear database")
+
+                    self.redis_database.flushall()
                     break
 
             self.bf.add(hashed_number)
-            pipe.set(hashed_number, number)
+            batch = hashed_number[:self.hash_length]
+            pipe.hset(batch, hashed_number, number)
 
             n += 1
-            if (n % 100000) == 0:
+            if (n % self.batch_size) == 0:
                 n = 0
                 pipe.execute()
                 pipe = self.redis_database.pipeline()
@@ -121,5 +141,7 @@ if __name__ == "__main__":
     try:
         HC.findCollision()
     except KeyboardInterrupt:
-        logging.debug("KeyboardInterupt")
-        logging.debug("Number of hashes in dict: " + str(HC.redis_database.dbsize()))
+        logging.debug("\n\
+                    KeyboardInterupt\n\
+                    Number of hashes in dict: " + str(HC.redis_database.dbsize()))
+        HC.redis_database.flushall()
