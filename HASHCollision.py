@@ -21,15 +21,17 @@ class HASHCollision(object):
         self.length = param.length
         self.number = param.number
 
+        logging.debug("\n\
+                    HASHCollision initialization\n\
+                    <DICTIONARY>\n\
+                    Bloom filter - storage:" + str(self.bloom_filter_size) + ", error rate: 0.01\n\
+                    Hash length (hexa) " + str(self.length))
+
 #    @profile
     def findCollision(self):
 
         logging.debug("Start of collision finding")
         number = self.number
-
-        logging.debug("Start string: " + str(number))
-        logging.debug("Length: " + str(self.length))
-        logging.debug("Bloom filter size: " + str(self.bloom_filter_size))
 
         hashed_number = hashlib.sha256(self.number).hexdigest()[:self.length]
         self.bf.add(hashed_number)
@@ -42,15 +44,19 @@ class HASHCollision(object):
 
             if (hashed_number in self.bf):
                 self.array_access_counter += 1
-                logging.debug("Array access counter: " + str(self.array_access_counter))
-                logging.debug("Current number of hashes in dict: " + str(len(self.hash_dict)))
+                logging.debug("\n\
+                    Array access counter: " + str(self.array_access_counter))
 
                 if (hashed_number in self.hash_dict):
-                    print("Start number: " + self.hash_dict[hashed_number] + " Hash: " + hashed_number)
-                    print("End number:   " + number + " Hash: " + hashed_number)
-                    print("Array access counter: " + str(self.array_access_counter))
-                    print("Total number of hashes in list: " + str(len(self.hash_dict)))
-                    logging.debug("Total number of hashes in dict: " + str(len(self.hash_dict)))
+                    print("First  number: " + self.hash_dict[hashed_number] + " Hash: " + hashed_number)
+                    print("Second number: " + number + " Hash: " + hashed_number)
+
+                    logging.debug("\n\
+                    Search finished\n\
+                    First  number: " + self.hash_dict[hashed_number] + " Hash: " + hashed_number + "\n\
+                    Second number: " + number + " Hash: " + hashed_number + "\n\
+                    Array access counter: " + str(self.array_access_counter))
+
                     break
 
             self.bf.add(hashed_number)
@@ -108,5 +114,6 @@ if __name__ == "__main__":
     try:
         HC.findCollision()
     except KeyboardInterrupt:
-        logging.debug("KeyboardInterupt")
-        logging.debug("Number of hashes in dict: " + str(len(HC.hash_dict)))
+        logging.debug("\n\
+                    KeyboardInterupt\n\
+                    Number of hashes in dict: " + str(HC.redis_database.dbsize()))
