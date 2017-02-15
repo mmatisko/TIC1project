@@ -26,7 +26,7 @@ class HASHCollision(object):
         self.redis_database = redis.StrictRedis(
                 host='localhost', port=6379)
 
-        self.hash_length = self.length/2
+        self.hash_length = self.length//2
         logging.debug("\n\
                     HASHCollision initialization\n\
                     Redis database - localhost:6379\n\
@@ -45,14 +45,14 @@ class HASHCollision(object):
         logging.debug("Start of collision finding")
         number = self.number
 
-        hashed_number = hashlib.sha256(self.number).hexdigest()[:self.length]
+        hashed_number = hashlib.sha256(self.number.encode()).hexdigest()[:self.length]
         self.bf.add(hashed_number)
 
         self.redis_database.hset(hashed_number[:self.hash_length], hashed_number, number)
 
         while (True):
             number = hashed_number
-            hashed_number = hashlib.sha256(number).hexdigest()[:self.length]
+            hashed_number = hashlib.sha256(number.encode()).hexdigest()[:self.length]
 
             if (hashed_number in self.bf):
                 self.array_access_counter += 1
@@ -63,15 +63,15 @@ class HASHCollision(object):
                 pipe = self.redis_database.pipeline()
 
                 if self.redis_database.hexists(hashed_number[:self.hash_length], hashed_number):
-                    print("First  number: " + self.redis_database.hget(hashed_number[:self.hash_length], hashed_number) + " Hash: " + hashed_number)
+                    print("First  number: " + self.redis_database.hget(hashed_number[:self.hash_length], hashed_number).decode('utf-8') + " Hash: " + hashed_number)
                     print("Second number: " + number + " Hash: " + hashed_number)
 
                     size = int(self.redis_database.info()['used_memory'])
-                    print('Database size: %s bytes, %s MB') % (size, size / 1024 / 1024)
+                    print('Database size: {} bytes, {} MB'.format(size, size / 1024 / 1024))
 
                     logging.debug("\n\
                     Search finished\n\
-                    First  number: " + self.redis_database.hget(hashed_number[:self.hash_length], hashed_number) + " Hash: " + hashed_number + "\n\
+                    First  number: " + self.redis_database.hget(hashed_number[:self.hash_length], hashed_number).decode('utf-8') + " Hash: " + hashed_number + "\n\
                     Second number: " + number + " Hash: " + hashed_number + "\n\
                     Array access counter: " + str(self.array_access_counter) + "\n\
                     Clear database")
