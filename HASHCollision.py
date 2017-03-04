@@ -33,14 +33,14 @@ class HASHCollision(object):
         logging.debug("Start of collision finding")
         number = self.number
 
-        hashed_number = hashlib.sha256(self.number).hexdigest()[:self.length]
+        hashed_number = hashlib.sha256(self.number.encode()).hexdigest()[:self.length]
         self.bf.add(hashed_number)
 
         self.hash_dict[hashed_number] = number
 
         while (True):
             number = hashed_number
-            hashed_number = hashlib.sha256(number).hexdigest()[:self.length]
+            hashed_number = hashlib.sha256(number.encode()).hexdigest()[:self.length]
 
             if (hashed_number in self.bf):
                 self.array_access_counter += 1
