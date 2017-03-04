@@ -2,8 +2,7 @@ import hashlib
 import logging
 import argparse
 from pybloomfilter import BloomFilter
-# from memory_profiler import profile
-import redis
+import lmdb
 
 
 class HASHCollision(object):
@@ -11,11 +10,9 @@ class HASHCollision(object):
     bf = None
     number = None
     length = None
-    redis_database = None
+    lmdb_database = None
     array_access_counter = 0
     bloom_filter_size = 3000000000
-    hash_length = None
-    batch_size = 100000
 
     def __init__(self, param):
 
@@ -23,24 +20,16 @@ class HASHCollision(object):
         self.length = param.length
         self.number = param.number
 
-        self.redis_database = redis.StrictRedis(
-                host='localhost', port=6379)
+        self.lmdb_database = lmdb.open("HASHCollision_db", writemap=True, sync=False, map_size=4294967296)
 
-        self.hash_length = self.length//2
         logging.debug("\n\
                     HASHCollision initialization\n\
-                    Redis database - localhost:6379\n\
-                    <internal implementation>\n\
+                    LMDB database - HASHCollision_db\n\
                     Bloom filter - storage:" + str(self.bloom_filter_size) + ", error rate: 0.01\n\
-                    Hash length (hexa) " + str(self.length) + "\n\
-                    HSET hash length: " + str(self.hash_length) + "\n\
-                    Batch size: " + str(self.batch_size))
+                    Hash length (hexa) " + str(self.length))
 
 #    @profile
     def findCollision(self):
-
-        n = 0
-        pipe = self.redis_database.pipeline()
 
         logging.debug("Start of collision finding")
         number = self.number
@@ -48,7 +37,8 @@ class HASHCollision(object):
         hashed_number = hashlib.sha256(self.number.encode()).hexdigest()[:self.length]
         self.bf.add(hashed_number)
 
-        self.redis_database.hset(hashed_number[:self.hash_length], hashed_number, number)
+        with self.lmdb_database.begin(write=True) as db:
+            db.put(hashed_number.encode(), number.encode())
 
         while (True):
             number = hashed_number
@@ -57,38 +47,28 @@ class HASHCollision(object):
             if (hashed_number in self.bf):
                 self.array_access_counter += 1
                 logging.debug("\n\
-                    Array access counter: " + str(self.array_access_counter))
+                Array access counter: " + str(self.array_access_counter))
 
-                pipe.execute()
-                pipe = self.redis_database.pipeline()
+                with self.lmdb_database.begin() as db:
+                    if db.get(hashed_number.encode()) is not None:
+                        print("First  number: " + db.get(hashed_number.encode()).decode() + " Hash: " + hashed_number)
+                        print("Second number: " + number + " Hash: " + hashed_number)
 
-                if self.redis_database.hexists(hashed_number[:self.hash_length], hashed_number):
-                    print("First  number: " + self.redis_database.hget(hashed_number[:self.hash_length], hashed_number).decode('utf-8') + " Hash: " + hashed_number)
-                    print("Second number: " + number + " Hash: " + hashed_number)
+                        print(self.lmdb_database.stat())
 
-                    size = int(self.redis_database.info()['used_memory'])
-                    print('Database size: {} bytes, {} MB'.format(size, size / 1024 / 1024))
-
-                    logging.debug("\n\
+                        logging.debug("\n\
                     Search finished\n\
-                    First  number: " + self.redis_database.hget(hashed_number[:self.hash_length], hashed_number).decode('utf-8') + " Hash: " + hashed_number + "\n\
+                    First  number: " + db.get(hashed_number.encode()).decode() + " Hash: " + hashed_number + "\n\
                     Second number: " + number + " Hash: " + hashed_number + "\n\
                     Array access counter: " + str(self.array_access_counter) + "\n\
-                    Number of hashes in dict: " + str(self.redis_database.dbsize()) + "\n\
                     Clear database")
 
-                    self.redis_database.flushall()
-                    break
+                        break
 
             self.bf.add(hashed_number)
-            batch = hashed_number[:self.hash_length]
-            pipe.hset(batch, hashed_number, number)
 
-            n += 1
-            if (n % self.batch_size) == 0:
-                n = 0
-                pipe.execute()
-                pipe = self.redis_database.pipeline()
+            with self.lmdb_database.begin(write=True) as db:
+                db.put(hashed_number.encode(), number.encode())
 
 
 class ParseParams(object):
@@ -139,6 +119,6 @@ if __name__ == "__main__":
         HC.findCollision()
     except KeyboardInterrupt:
         logging.debug("\n\
-                    KeyboardInterupt\n\
-                    Number of hashes in dict: " + str(HC.redis_database.dbsize()))
-        HC.redis_database.flushall()
+                    KeyboardInterupt\n")
+        print(HC.lmdb_database.stat())
+        #HC.lmdb_database.close()

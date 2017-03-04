@@ -1,3 +1,4 @@
 *.log
 *.bloom
 Pipfile*
+*_db
