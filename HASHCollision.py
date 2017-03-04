@@ -13,13 +13,13 @@ class HASHCollision(object):
     length = None
     redis_database = None
     array_access_counter = 0
-    bloom_filter_size = 200000000
+    bloom_filter_size = 3000000000
     hash_length = None
     batch_size = 100000
 
     def __init__(self, param):
 
-        self.bf = BloomFilter(self.bloom_filter_size, 0.01, param.bloom_file)
+        self.bf = BloomFilter(self.bloom_filter_size, 0.01)
         self.length = param.length
         self.number = param.number
 
@@ -74,6 +74,7 @@ class HASHCollision(object):
                     First  number: " + self.redis_database.hget(hashed_number[:self.hash_length], hashed_number).decode('utf-8') + " Hash: " + hashed_number + "\n\
                     Second number: " + number + " Hash: " + hashed_number + "\n\
                     Array access counter: " + str(self.array_access_counter) + "\n\
+                    Number of hashes in dict: " + str(self.redis_database.dbsize()) + "\n\
                     Clear database")
 
                     self.redis_database.flushall()
@@ -109,9 +110,6 @@ class ParseParams(object):
         parser.add_argument("-n", "--number", help="First number for hash",
                             required=False, dest="number", default="RANDOM")
 
-        parser.add_argument("-b", "--bloom_file", help="File for storing Bloom filter",
-                            required=False, dest="bloomfile", default="filter.bloom")
-
         parser.add_argument("--log_file", help="Log file name",
                             required=False, dest="logfile", default="HASHCollision.log")
 
@@ -126,7 +124,6 @@ class ParseParams(object):
             self.number = str(arguments.number)
 
         self.length = arguments.length
-        self.bloom_file = arguments.bloomfile
         self.log_file = arguments.logfile
 
         if arguments.logging:
