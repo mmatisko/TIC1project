@@ -1,0 +1,896 @@
+Mode SET: number of characters: 9
+First number: d81916c2e
+First hash:  d81929d1d
+Second number: ce6227234
+Second hash: d81929d1d
+Filter I/O: 375532
+Iterations: 375532
+Time elapsed: 41.997
+
+Mode MAP: number of characters: 9
+First number: 209e99430
+First hash:  d81929d1d
+Second number: ce6227234
+Second hash: d81929d1d
+Filter I/O: 375532
+Iterations: 1
+Time elapsed: 40.402
+
+Mode VECTOR: number of characters: 9
+First number: 209e99430
+First hash:  d81929d1d
+Second number: ce6227234
+Second hash: d81929d1d
+Filter I/O: 375532
+Iterations: 1
+Time elapsed: 30.694
+
+Mode DEQUE: number of characters: 9
+Second number: ce6227234
+Second hash: d81929d1d
+Filter I/O: 375532
+Iterations: 1
+Time elapsed: 23.553
+
+Mode DEQUE: number of characters: 10
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1
+Time elapsed: 112.437
+
+Mode DEQUE: number of characters: 11
+Second number: c2204c8bb71
+Second hash: dcb7bc1d114
+Filter I/O: 9071057
+Iterations: 1
+Time elapsed: 572.505
+
+Mode DEQUE: number of characters: 12
+Second number: 4b6995c9fd76
+Second hash: ed20d3d273ac
+Filter I/O: 7431859
+Iterations: 1
+Time elapsed: 476.878
+
+Mode DEQUE: number of characters: 13
+Second number: 78e464236a8a1
+Second hash: 4299e366feabe
+Filter I/O: 33626089
+Iterations: 1
+Time elapsed: 2200.6
+
+
+Mode DEQUE: number of characters: 14
+Second number: f20b0b3aba9d94
+Second hash: cccdc0a05dded4
+Filter I/O: 35953514
+Iterations: 1
+Time elapsed: 2416.8
+
+Mode VECTOR: number of characters: 10
+First number: cc3dd914b0
+First hash:  c2f0fc6b3f
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1
+Time elapsed: 138.637
+
+Mode LIST: number of characters: 10
+First number: 
+First hash:  c2f0fc6b3f
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1
+Time elapsed: 119.241
+
+Mode VECTOR: number of characters: 11
+First number: ea0690941db
+First hash:  dcb7bc1d114
+Second number: c2204c8bb71
+Second hash: dcb7bc1d114
+Filter I/O: 9071057
+Iterations: 1
+Time elapsed: 811.387
+
+Mode VECTOR: number of characters: 12
+First number: e9046af492d1
+First hash:  ed20d3d273ac
+Second number: 4b6995c9fd76
+Second hash: ed20d3d273ac
+Filter I/O: 7431859
+Iterations: 1
+Time elapsed: 781.654
+
+Mode VECTOR: number of characters: 6
+First number: a20832
+First hash:  5d9d19
+Second number: b3fb94
+Second hash: 5d9d19
+Filter I/O: 3055
+Iterations: 1
+Time elapsed: 0.313
+
+Mode DEQUE: number of characters: 15
+Second number: 5f1c5ffd768e843
+Second hash: 3510938ab04d539
+Filter I/O: 30208309
+Iterations: 1
+Time elapsed: 277.733
+
+Mode DEQUE: number of characters: 6
+First number: a20832
+First hash:  5d9d19
+Second number: b3fb94
+Second hash: 5d9d19
+Filter I/O: 3055
+Iterations: 1
+Time elapsed: 0.028
+
+Mode DEQUE: number of characters: 8
+First number: 32977540
+First hash:  69929d86
+Second number: 1d5bd42e
+Second hash: 69929d86
+Filter I/O: 36603
+Iterations: 1
+Time elapsed: 0.294
+
+Mode DEQUE: number of characters: 10
+First number: cc3dd914b0
+First hash:  c2f0fc6b3f
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1
+Time elapsed: 14.277
+
+Mode DEQUE: number of characters: 12
+First number: e9046af492d1
+First hash:  ed20d3d273ac
+Second number: 4b6995c9fd76
+Second hash: ed20d3d273ac
+Filter I/O: 7431859
+Iterations: 1
+Time elapsed: 67.111
+
+Mode DEQUE: number of characters: 14
+Second number: f20b0b3aba9d94
+Second hash: cccdc0a05dded4
+Filter I/O: 35953514
+Iterations: 1
+Time elapsed: 332.342
+
+Mode DEQUE: number of characters: 14
+Second number: 8abed63966e7aa
+Second hash: b7d49e972bf1f7
+Filter I/O: 36462556
+Iterations: 1
+Time elapsed: 333.789
+
+Mode DEQUE: number of characters: 13
+Second number: d388fbe22709a
+Second hash: bd6a734fc55fe
+Filter I/O: 35096234
+Iterations: 1
+Time elapsed: 319.922
+
+Mode VECTOR: number of characters: 12
+First number: e9046af492d1
+First hash:  ed20d3d273ac
+Second number: 4b6995c9fd76
+Second hash: ed20d3d273ac
+Filter I/O: 7431859
+Iterations: 1
+Time elapsed: 67.618
+
+Mode VECTOR: number of characters: 13
+First number: 22950e82c50f7
+First hash:  543fd6425fd5b
+Second number: caa45b892a51b
+Second hash: 543fd6425fd5b
+Filter I/O: 45023596
+Iterations: 1
+Time elapsed: 422.427
+
+Mode VECTOR: number of characters: 14
+
+Mode DEQUE: number of characters: 14
+Second number: 218d6548583b3f
+Second hash: 720303ed09258b
+Filter I/O: 46414691
+Iterations: 1
+Time elapsed: 441.463
+
+Mode DEQUE: number of characters: 14
+Second number: 218d6548583b3f
+Second hash: 720303ed09258b
+Filter I/O: 46414691
+Iterations: 1
+Time elapsed: 442.003
+
+Mode DEQUE: number of characters: 14
+Second number: 218d6548583b3f
+Second hash: 720303ed09258b
+Filter I/O: 46414691
+Iterations: 1
+Time elapsed: 437.94
+
+Mode DEQUE: number of characters: 14
+Second number: 1ec73959048427
+Second hash: b4a41612a5ae08
+Filter I/O: 57509834
+Iterations: 1
+Time elapsed: 544.496
+
+Mode DEQUE: number of characters: 6
+First number: a20832
+First hash:  5d9d19
+Second number: b3fb94
+Second hash: 5d9d19
+Filter I/O: 3055
+Iterations: 1
+Time elapsed: 0.047
+
+Mode DEQUE: number of characters: 8
+First number: 32977540
+First hash:  69929d86
+Second number: 1d5bd42e
+Second hash: 69929d86
+Filter I/O: 36603
+Iterations: 1
+Time elapsed: 0.3
+
+Mode DEQUE: number of characters: 10
+First number: cc3dd914b0
+First hash:  c2f0fc6b3f
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1
+Time elapsed: 13.171
+
+Mode DEQUE: number of characters: 12
+First number: e9046af492d1
+First hash:  ed20d3d273ac
+Second number: 4b6995c9fd76
+Second hash: ed20d3d273ac
+Filter I/O: 7431859
+Iterations: 1
+Time elapsed: 68.606
+
+Mode DEQUE: number of characters: 13
+First number: 22950e82c50f7
+First hash:  543fd6425fd5b
+Second number: caa45b892a51b
+Second hash: 543fd6425fd5b
+Filter I/O: 45023596
+Iterations: 2
+Time elapsed: 426.721
+
+Mode DEQUE: number of characters: 14
+
+Mode DEQUE: number of characters: 12
+First number: e9046af492d1
+First hash:  ed20d3d273ac
+Second number: 4b6995c9fd76
+Second hash: ed20d3d273ac
+Filter I/O: 7431859
+Iterations: 1
+Time elapsed: 62.959
+
+Mode DEQUE: number of characters: 13
+First number: 22950e82c50f7
+First hash:  543fd6425fd5b
+Second number: caa45b892a51b
+Second hash: 543fd6425fd5b
+Filter I/O: 45023596
+Iterations: 22
+Time elapsed: 395.916
+
+Mode DEQUE: number of characters: 10
+First number: cc3dd914b0
+First hash:  c2f0fc6b3f
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1
+Time elapsed: 14.693
+
+Mode DEQUE: number of characters: 10
+First number: cc3dd914b0
+First hash:  c2f0fc6b3f
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1
+Time elapsed: 14.178
+
+Mode DEQUE: number of characters: 12
+First number: e9046af492d1
+First hash:  ed20d3d273ac
+Second number: 4b6995c9fd76
+Second hash: ed20d3d273ac
+Filter I/O: 7431859
+Iterations: 1
+Time elapsed: 62.117
+
+Mode DEQUE: number of characters: 12
+First number: e9046af492d1
+First hash:  ed20d3d273ac
+Second number: 4b6995c9fd76
+Second hash: ed20d3d273ac
+Filter I/O: 7431859
+Iterations: 1
+Time elapsed: 67.274
+
+Mode SET: number of characters: 10
+First number: cc3dd914b0
+First hash:  c2f0fc6b3f
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1617989
+Time elapsed: 14.649
+
+Mode MAP: number of characters: 10
+First number: cc3dd914b0
+First hash:  c2f0fc6b3f
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1
+Time elapsed: 14.343
+
+Mode VECTOR: number of characters: 10
+First number: cc3dd914b0
+First hash:  c2f0fc6b3f
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1
+Time elapsed: 13.287
+
+Mode DEQUE: number of characters: 10
+First number: cc3dd914b0
+First hash:  c2f0fc6b3f
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1
+Time elapsed: 13.143
+
+Mode LIST: number of characters: 10
+First number: 
+First hash:  c2f0fc6b3f
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1
+Time elapsed: 13.568
+
+Mode VECTOR: number of characters: 12
+First number: e9046af492d1
+First hash:  ed20d3d273ac
+Second number: 4b6995c9fd76
+Second hash: ed20d3d273ac
+Filter I/O: 7431859
+Iterations: 1
+Time elapsed: 66.305
+
+Mode DEQUE: number of characters: 12
+First number: e9046af492d1
+First hash:  ed20d3d273ac
+Second number: 4b6995c9fd76
+Second hash: ed20d3d273ac
+Filter I/O: 7431859
+Iterations: 1
+Time elapsed: 63.106
+
+Mode MAP: number of characters: 12
+First number: e9046af492d1
+First hash:  ed20d3d273ac
+Second number: 4b6995c9fd76
+Second hash: ed20d3d273ac
+Filter I/O: 7431859
+Iterations: 1
+Time elapsed: 67.289
+
+Mode DEQUE: number of characters: 8
+First number: 32977540
+First hash:  69929d86
+Second number: 1d5bd42e
+Second hash: 69929d86
+Filter I/O: 36603
+Iterations: 1
+Time elapsed: 0.63
+
+Mode DEQUE: number of characters: 10
+First number: cc3dd914b0
+First hash:  c2f0fc6b3f
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1
+Time elapsed: 14.655
+
+Mode SADOMASO: number of characters: 10
+First number: cc3dd914b0
+First hash:  c2f0fc6b3f
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1
+Time elapsed: 15.347
+
+Mode SADOMASO: number of characters: 10
+First number: cc3dd914b0
+First hash:  c2f0fc6b3f
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1
+Time elapsed: 13.22
+
+Mode SADOMASO: number of characters: 10
+First number: cc3dd914b0
+First hash:  c2f0fc6b3f
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1
+Time elapsed: 13.21
+
+Mode SADOMASO: number of characters: 8
+First number: 32977540
+First hash:  69929d86
+Second number: 1d5bd42e
+Second hash: 69929d86
+Filter I/O: 36603
+Iterations: 1
+Time elapsed: 0.301
+
+Mode SADOMASO: number of characters: 12
+First number: e9046af492d1
+First hash:  ed20d3d273ac
+Second number: 4b6995c9fd76
+Second hash: ed20d3d273ac
+Filter I/O: 7431859
+Iterations: 1
+Time elapsed: 62.725
+
+Mode SADOMASO: number of characters: 13
+First number: 22950e82c50f7
+First hash:  543fd6425fd5b
+Second number: caa45b892a51b
+Second hash: 543fd6425fd5b
+Filter I/O: 45023596
+Iterations: 31
+Time elapsed: 409.586
+
+Mode SADOMASO: number of characters: 13
+First number: 22950e82c50f7
+First hash:  543fd6425fd5b
+Second number: caa45b892a51b
+Second hash: 543fd6425fd5b
+Filter I/O: 45023596
+Iterations: 31
+Time elapsed: 423.885
+
+Mode VECTOR: number of characters: 13
+First number: 22950e82c50f7
+First hash:  543fd6425fd5b
+Second number: caa45b892a51b
+Second hash: 543fd6425fd5b
+Filter I/O: 45023596
+Iterations: 31
+Time elapsed: 418.964
+
+Mode ROCKSDB: number of characters: 56
+Second number: abc
+Second hash: ba7816bf8f01cf
+Filter I/O: 1
+Iterations: 0
+Time elapsed: 0.055
+
+Mode ROCKSDB: number of characters: 56
+Second number: abc
+Second hash: ba7816bf8f01cf
+Filter I/O: 1
+Iterations: 0
+Time elapsed: 0.003
+
+Mode VECTOR: number of bites: 52
+Second number: caa45b892a51b
+Second hash: 543fd6425fd5b
+Filter I/O: 45023596
+Iterations: 31
+Time elapsed: 448.722
+
+Mode VECTOR: number of bites: 53
+Second number: caa45b892a51b
+Second hash: 543fd6425fd5b
+Filter I/O: 45023596
+Iterations: 31
+Time elapsed: 434.59
+
+Mode VECTOR: number of bites: 14
+Second number: dab9
+Second hash: cc80
+Filter I/O: 421
+Iterations: 1
+Time elapsed: 0.006
+
+Mode VECTOR: number of bites: 15
+Second number: dab9
+Second hash: cc80
+Filter I/O: 421
+Iterations: 1
+Time elapsed: 0.006
+
+Mode VECTOR: number of bites: 16
+Second number: dab9
+Second hash: cc80
+Filter I/O: 421
+Iterations: 1
+Time elapsed: 0.006
+
+Mode VECTOR: number of bites: 14
+Second number: dab9
+Second hash: cc80
+Filter I/O: 421
+Iterations: 1
+Time elapsed: 0.006
+
+Mode VECTOR: number of bites: 17
+Second number: b1ae3
+Second hash: 43336
+Filter I/O: 181
+Iterations: 1
+Time elapsed: 0.004
+
+Mode VECTOR: number of bites: 18
+Second number: b1ae3
+Second hash: 43336
+Filter I/O: 181
+Iterations: 1
+Time elapsed: 0.004
+
+Mode VECTOR: number of bites: 17
+Second number: b1ae3
+Second hash: 43336
+Filter I/O: 181
+Iterations: 1
+Time elapsed: 0.005
+
+Mode VECTOR: number of bites: 16
+Second number: dab9
+Second hash: cc80
+Filter I/O: 421
+Iterations: 1
+Time elapsed: 0.006
+
+Mode VECTOR: number of bites: 19
+Second number: b1ae3
+Second hash: 43336
+Filter I/O: 181
+Iterations: 1
+Time elapsed: 0.004
+
+Mode VECTOR: number of bites: 20
+Second number: b1ae3
+Second hash: 43336
+Filter I/O: 181
+Iterations: 1
+Time elapsed: 0.006
+
+Mode VECTOR: number of bites: 21
+Second number: b3fb94
+Second hash: 5d9d19
+Filter I/O: 3055
+Iterations: 1
+Time elapsed: 0.039
+
+Mode VECTOR: number of bites: 13
+Second number: dab9
+Second hash: cc80
+Filter I/O: 421
+Iterations: 1
+Time elapsed: 0.006
+
+Mode VECTOR: number of bites: 17
+Second number: b1ae3
+Second hash: 43336
+Filter I/O: 181
+Iterations: 1
+Time elapsed: 0.003
+
+Mode VECTOR: number of bites: 21
+Second number: b3fb94
+Second hash: 5d9d19
+Filter I/O: 3055
+Iterations: 1
+Time elapsed: 0.032
+
+Mode VECTOR: number of bites: 40
+Second number: 251ca3ba0d
+Second hash: c2f0fc6b3f
+Filter I/O: 1617989
+Iterations: 1
+Time elapsed: 15.281
+
+Mode VECTOR: number of bites: 41
+Second number: c2204c8bb71
+Second hash: dcb7bc1d114
+Filter I/O: 9071057
+Iterations: 1
+Time elapsed: 93.467
+
+Mode VECTOR: number of bites: 44
+Second number: c2204c8bb71
+Second hash: dcb7bc1d114
+Filter I/O: 9071057
+Iterations: 1
+Time elapsed: 86.701
+
+Mode VECTOR: number of bites: 48
+Second number: 4b6995c9fd76
+Second hash: ed20d3d273ac
+Filter I/O: 7431859
+Iterations: 1
+Time elapsed: 76.639
+
+Mode VECTOR: number of bites: 50
+Second number: caa45b892a51b
+Second hash: 543fd6425fd5b
+Filter I/O: 45023596
+Iterations: 31
+Time elapsed: 460.881
+
+Mode LONG: number of bites: 16
+First number: 450158
+First hash:  cb34
+Second number: cb34
+Second hash: abc
+Filter I/O: 2
+Iterations: 1
+Time elapsed: 0.002
+
+Mode LONG: number of bites: 16
+First number: 2c0158
+First hash:  cb34
+Second number: cb34
+Second hash: cb34
+Filter I/O: 2
+Iterations: 1
+Time elapsed: 0.003
+
+Mode LONG: number of bites: 16
+First number: 330158
+First hash:  cb34
+Second number: cb34
+Second hash: cb34
+Filter I/O: 2
+Iterations: 1
+Time elapsed: 11.121
+
+Mode LONG: number of bites: 16
+First number: 12ed
+First hash:  4fb
+Second number: 12ed
+Second hash: 4fb
+Filter I/O: 10
+Iterations: 1
+Time elapsed: 0.002
+
+Mode LONG: number of bites: 16
+First number: 12ed
+First hash:  4fb
+Second number: 12ed
+Second hash: 4fb
+Filter I/O: 10
+Iterations: 1
+Time elapsed: 31.8
+
+Mode LONG: number of bites: 8
+
+Mode LONG: number of bites: 16
+First number: 3c0158
+First hash:  0
+Second number: 0
+Second hash: 0
+Filter I/O: 3
+Iterations: 1
+Time elapsed: 5.195
+
+Mode LONG: number of bites: 16
+First number: 240158
+First hash:  0
+Second number: 0
+Second hash: 0
+Filter I/O: 3
+Iterations: 1
+Time elapsed: 0.04
+
+Mode LONG: number of bites: 16
+First number: 240158
+First hash:  0
+Second number: 0
+Second hash: 0
+Filter I/O: 3
+Iterations: 1
+Time elapsed: 0.01
+
+Mode LONG: number of bites: 16
+
+Mode LONG: number of bites: 16
+
+Mode LONG: number of bites: 16
+First number: 1acb
+First hash:  2744
+Second number: 7b6d
+Second hash: 2744
+Filter I/O: 261
+Iterations: 1
+Time elapsed: 0.006
+
+Mode LONG: number of bites: 24
+First number: 4b5146
+First hash:  6e8fa3
+Second number: bb51e2
+Second hash: 6e8fa3
+Filter I/O: 9581
+Iterations: 1
+Time elapsed: 0.144
+
+Mode LONG: number of bites: 40
+
+Mode LONG: number of bites: 32
+First number: 6a9bf177
+First hash:  df93ea21
+Second number: 7f6f36de
+Second hash: df93ea21
+Filter I/O: 86057
+Iterations: 1
+Time elapsed: 1.306
+
+Mode LONG: number of bites: 40
+First number: a8b9414498
+First hash:  617c147629
+Second number: 98e49cb4d3
+Second hash: 617c147629
+Filter I/O: 888809
+Iterations: 1
+Time elapsed: 13.948
+
+Mode LONG: number of bites: 44
+
+Mode LONG: number of bites: 44
+First number: 4ab168439d0
+First hash:  5ce0a73b28a
+Second number: f52787359fe
+Second hash: 5ce0a73b28a
+Filter I/O: 6613220
+Iterations: 1
+Time elapsed: 110.921
+
+Mode LONG: number of bites: 48
+First number: 19523362b26c
+First hash:  3d9033b75363
+Second number: 842212e0cca4
+Second hash: 3d9033b75363
+Filter I/O: 6409690
+Iterations: 1
+Time elapsed: 104.394
+
+Mode LONG: number of bites: 52
+First number: c14fa99aad0e1
+First hash:  63716819f1113
+Second number: c3ee90fede9e1
+Second hash: 63716819f1113
+Filter I/O: 8056151
+Iterations: 1
+Time elapsed: 128.612
+
+Mode LONG: number of bites: 56
+First number: 4c16b81fedc8c0
+First hash:  ad459221a9387a
+Second number: 963dafb0535de0
+Second hash: ad459221a9387a
+Filter I/O: 151376810
+Iterations: 790
+Time elapsed: 2696.81
+
+Mode LONG: number of bites: 40
+First number: a8b9414498
+First hash:  617c147629
+Second number: 98e49cb4d3
+Second hash: 617c147629
+Filter I/O: 888809
+Iterations: 1
+Time elapsed: 13.422
+
+Mode LONG: number of bites: 48
+First number: 19523362b26c
+First hash:  3d9033b75363
+Second number: 842212e0cca4
+Second hash: 3d9033b75363
+Filter I/O: 6409690
+Iterations: 1023
+Time elapsed: 120.69
+
+Mode LONG: number of bites: 48
+First number: 19523362b26c
+First hash:  3d9033b75363
+Second number: 842212e0cca4
+Second hash: 3d9033b75363
+Filter I/O: 6409690
+Iterations: 29
+Time elapsed: 101.238
+
+Mode LONG: number of bites: 48
+First number: 19523362b26c
+First hash:  3d9033b75363
+Second number: 842212e0cca4
+Second hash: 3d9033b75363
+Filter I/O: 6409690
+Iterations: 3
+Time elapsed: 104.067
+
+Mode LONG: number of bites: 52
+First number: c14fa99aad0e1
+First hash:  63716819f1113
+Second number: c3ee90fede9e1
+Second hash: 63716819f1113
+Filter I/O: 8056151
+Iterations: 412
+Time elapsed: 144.727
+
+Mode LONG: number of bites: 56
+First number: 4c16b81fedc8c0
+First hash:  ad459221a9387a
+Second number: 963dafb0535de0
+Second hash: ad459221a9387a
+Filter I/O: 151376810
+Iterations: 2661
+Time elapsed: 3403.99
+
+Mode LONG: number of bites: 32
+First number: 6a9bf177
+First hash:  df93ea21
+Second number: 7f6f36de
+Second hash: df93ea21
+Filter I/O: 86057
+Iterations: 1
+Time elapsed: 1.086
+
+Mode LONG: number of bites: 48
+First number: 19523362b26c
+First hash:  3d9033b75363
+Second number: 842212e0cca4
+Second hash: 3d9033b75363
+Filter I/O: 6409690
+Iterations: 1
+Time elapsed: 77.29
+
+Mode LONG: number of bites: 52
+First number: c14fa99aad0e1
+First hash:  63716819f1113
+Second number: c3ee90fede9e1
+Second hash: 63716819f1113
+Filter I/O: 8056151
+Iterations: 1
+Time elapsed: 97.44
+
+Mode LONG: number of bites: 56
+First number: 4c16b81fedc8c0
+First hash:  ad459221a9387a
+Second number: 963dafb0535de0
+Second hash: ad459221a9387a
+Filter I/O: 151376810
+Iterations: 2661
+Time elapsed: 2006.2
+
+Mode LONG: number of bites: 40
