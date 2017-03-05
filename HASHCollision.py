@@ -3,6 +3,7 @@ import logging
 import argparse
 from pybloomfilter import BloomFilter
 import lmdb
+# from memory_profiler import profile
 
 
 class HASHCollision(object):
@@ -28,7 +29,7 @@ class HASHCollision(object):
                     Bloom filter - storage:" + str(self.bloom_filter_size) + ", error rate: 0.01\n\
                     Hash length (hexa) " + str(self.length))
 
-#    @profile
+    # @profile
     def findCollision(self):
 
         logging.debug("Start of collision finding")
@@ -61,7 +62,7 @@ class HASHCollision(object):
                     First  number: " + db.get(hashed_number.encode()).decode() + " Hash: " + hashed_number + "\n\
                     Second number: " + number + " Hash: " + hashed_number + "\n\
                     Array access counter: " + str(self.array_access_counter) + "\n\
-                    Clear database")
+                    DB Stat: " + str(self.lmdb_database.stat()))
 
                         break
 
@@ -119,6 +120,7 @@ if __name__ == "__main__":
         HC.findCollision()
     except KeyboardInterrupt:
         logging.debug("\n\
-                    KeyboardInterupt\n")
+                    KeyboardInterupt\n\
+                    DB stat: " + str(HC.lmdb_database.stat()))
         print(HC.lmdb_database.stat())
-        #HC.lmdb_database.close()
+        # HC.lmdb_database.close()
