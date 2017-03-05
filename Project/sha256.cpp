@@ -116,7 +116,6 @@ void SHA256::final(unsigned char *digest)
 }
 
 std::string sha256(std::string input)
-//uint64_t sha256(std::string input)
 {
 	unsigned char digest[SHA256::DIGEST_SIZE];
 	memset(digest, 0, SHA256::DIGEST_SIZE);
@@ -126,16 +125,10 @@ std::string sha256(std::string input)
 	ctx.update(reinterpret_cast<const unsigned char*>(input.c_str()), unsigned int(input.length()));
 	ctx.final(digest);
 
-	uint64_t sum = 0;
 	char buf[2 * SHA256::DIGEST_SIZE + 1];
 	for (int i = 0; i < SHA256::DIGEST_SIZE; i++) {
-		//if (i < 8) {
-			//for (int j = 0; j < 8; j++)
-				//sum += (((digest[i] >> j) & 1) == 1) ? pow(2,i+j) : 0;
-		//}
+
 		sprintf(buf + 2 * i, "%02x", i < 8 ? digest[i] : unsigned char('\0'));
 	}
-		
-	//return sum;
 	return std::string(buf);
 }
