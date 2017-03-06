@@ -7,8 +7,8 @@
 #include "sha256.h"
 #include "bloom_filter.hpp"
 #include "ThreadPool.h"
-#include <thread>
-#include <condition_variable>
+//#include <thread>
+//#include <condition_variable>
 
 #define MULTITHREAD
 #ifdef MULTITHREAD
@@ -17,12 +17,13 @@
 #define PREDICTED_SIZE 600000000
 
 using namespace std;
+//using nbsdx::concurrent::ThreadPool;
 
 ofstream logStringFile;
 uint_fast64_t *base, result, filter_io;
 string input, logString, output;
 int length, offset, endIndex;
-float filter_accuracy = float(0.01);
+float filter_accuracy = float(0.005);
 bool collisionFound = false;
 
 void writelogString(string text) {
@@ -66,7 +67,6 @@ bool findCollision(int order)
 #endif
 
 int main() {
-	using nbsdx::concurrent::ThreadPool;
 	uint64_t iterations = 0;
 	base = new uint64_t[PREDICTED_SIZE];
 	output = "abc";
@@ -79,7 +79,8 @@ int main() {
 	params.compute_optimal_parameters();
 	bloom_filter filter(params);
 
-	ThreadPool<THREAD_NUM> pool;
+	const int threads = thread::hardware_concurrency();
+	ThreadPool pool(threads);
 
 	cout << "Enter number of bites: ";
 	cin >> length;
@@ -116,11 +117,26 @@ int main() {
 				for (short i = 0; i < THREAD_NUM; ++i)
 					if (iterators[i].joinable()) iterators[i].join();*/
 				
-				for (short i = 0; i < THREAD_NUM; ++i)
-					pool.AddJob([&]()
-				{
-					findCollision(i);
-				});
+				for (unsigned short i = 0; i < threads; ++i) {
+					function<void()> task = [i]()
+					{
+						uint64_t order = i;
+						uint64_t startIndex = order == 0 ? 0 : uint64_t(round(order * (filter_io / THREAD_NUM)));
+						uint64_t endIndex = ++order == THREAD_NUM ? filter_io : uint64_t(round(order * (filter_io / THREAD_NUM)));
+						for (uint64_t j = startIndex; j < endIndex; ++j) {
+							if (collisionFound) break;// return false;
+							if (result == base[j]) {
+								logString += "lenght=" + to_string(length) + "\n""first_pair=" + IntToString(base[j - 1]) + " " + IntToString(base[j]) + "\n";
+								input = IntToString(base[filter_io - 1]);
+								output = IntToString(result);
+								collisionFound = true;
+								//return true;
+							}
+						}
+						//return false;
+					};
+					pool.AddJob(task);
+				}
 				pool.WaitAll();
 #endif
 				if (collisionFound) break;
