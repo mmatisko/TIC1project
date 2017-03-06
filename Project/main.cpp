@@ -6,7 +6,9 @@
 
 #include "sha256.h"
 #include "bloom_filter.hpp"
+#include "ThreadPool.h"
 #include <thread>
+#include <condition_variable>
 
 #define MULTITHREAD
 #ifdef MULTITHREAD
@@ -20,7 +22,7 @@ ofstream logStringFile;
 uint_fast64_t *base, result, filter_io;
 string input, logString, output;
 int length, offset, endIndex;
-float filter_accuracy = float(0.005);
+float filter_accuracy = float(0.01);
 bool collisionFound = false;
 
 void writelogString(string text) {
@@ -60,9 +62,11 @@ bool findCollision(int order)
 	}
 	return false;
 }
+
 #endif
 
 int main() {
+	using nbsdx::concurrent::ThreadPool;
 	uint64_t iterations = 0;
 	base = new uint64_t[PREDICTED_SIZE];
 	output = "abc";
@@ -74,6 +78,8 @@ int main() {
 	params.random_seed = 0xA5A5A5A5;
 	params.compute_optimal_parameters();
 	bloom_filter filter(params);
+
+	ThreadPool<THREAD_NUM> pool;
 
 	cout << "Enter number of bites: ";
 	cin >> length;
@@ -103,12 +109,19 @@ int main() {
 						break;
 					}
 #else
-				thread iterators[THREAD_NUM];
+				/*thread iterators[THREAD_NUM];
 				for (short i = 0; i < THREAD_NUM; ++i)
 					iterators[i] = thread(findCollision, i);
 
 				for (short i = 0; i < THREAD_NUM; ++i)
-					if (iterators[i].joinable()) iterators[i].join();
+					if (iterators[i].joinable()) iterators[i].join();*/
+				
+				for (short i = 0; i < THREAD_NUM; ++i)
+					pool.AddJob([&]()
+				{
+					findCollision(i);
+				});
+				pool.WaitAll();
 #endif
 				if (collisionFound) break;
 			}
@@ -121,6 +134,7 @@ int main() {
 		filter.insert(output);
 		output = IntToString(result);
 	} 
+	pool.JoinAll();
 	clock_t end = clock();
 	double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
 	logStringFile.open("performance_logString.txt", ios::out | ios::app);

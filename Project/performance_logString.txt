@@ -155,3 +155,48 @@ second_pair=c3ee90fede9e1 63716819f1113
 time=88.805000
 filter_io=8056151
 array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=32
+first_pair=6a9bf177 df93ea21
+second_pair=7f6f36de df93ea21
+time=0.911000
+filter_io=86057
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=32
+first_pair=25fd6f76 ccb43357
+second_pair=25fd6f76 ccb43357
+time=0.916000
+filter_io=86743
+array_io=687
+
+threads=1+4
+filter_accuracy=0.450000
+lenght=32
+first_pair=dced9c4a 54a1c4cd
+second_pair=dced9c4a 54a1c4cd
+time=0.836000
+filter_io=86334
+array_io=284
+
+threads=1+4
+filter_accuracy=0.600000
+lenght=32
+first_pair=6c7bcbd8 2107729
+second_pair=6c7bcbd8 2107729
+time=0.886000
+filter_io=87070
+array_io=1024
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=c14fa99aad0e1 63716819f1113
+second_pair=c3ee90fede9e1 63716819f1113
+time=88.130000
+filter_io=8056151
+array_io=1
