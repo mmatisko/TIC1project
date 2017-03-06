@@ -24,6 +24,7 @@
 #include <iterator>
 #include <limits>
 #include <vector>
+#include <algorithm>
 
 
 static const std::size_t bits_per_char = 0x08;    // 8 bits in 1 char(unsigned)

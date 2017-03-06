@@ -1,5 +1,6 @@
 #include <cstring>
 #include <fstream>
+#include <algorithm>
 
 #include "sha256.h"
 
@@ -30,7 +31,7 @@ void SHA256::transform(const unsigned char *message, unsigned int block_nb)
 	int i;
 	int j;
 	for (i = 0; i < int(block_nb); i++) {
-		sub_block = message + (unsigned __int64(i) << 6);
+		sub_block = message + (uint_fast64_t(i) << 6);
 		for (j = 0; j < 16; j++) {
 			SHA2_PACK32(&sub_block[j << 2], &w[j]);
 		}
@@ -122,13 +123,13 @@ std::string sha256(std::string input)
 
 	SHA256 ctx = SHA256();
 	ctx.init();
-	ctx.update(reinterpret_cast<const unsigned char*>(input.c_str()), unsigned int(input.length()));
+	ctx.update(reinterpret_cast<const unsigned char*>(input.c_str()), (unsigned int)(input.length()));
 	ctx.final(digest);
 
 	char buf[2 * SHA256::DIGEST_SIZE + 1];
 	for (int i = 0; i < SHA256::DIGEST_SIZE; i++) {
 
-		sprintf(buf + 2 * i, "%02x", i < 8 ? digest[i] : unsigned char('\0'));
+		sprintf(buf + 2 * i, "%02x", i < 8 ? digest[i] : (unsigned char)('\0'));
 	}
 	return std::string(buf);
 }
