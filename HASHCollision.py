@@ -21,7 +21,7 @@ class HASHCollision(object):
         self.length = param.length
         self.number = param.number
 
-        self.lmdb_database = lmdb.open("HASHCollision_db", writemap=True, sync=False, map_size=4294967296)
+        self.lmdb_database = lmdb.open("HASHCollision_db", writemap=True, sync=False, map_size=107374182400)
 
         logging.debug("\n\
                     HASHCollision initialization\n\
