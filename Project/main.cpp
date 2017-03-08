@@ -7,23 +7,19 @@
 #include "sha256.h"
 #include "bloom_filter.hpp"
 #include "ThreadPool.h"
-//#include <thread>
-//#include <condition_variable>
 
 #define MULTITHREAD
 #ifdef MULTITHREAD
 #define THREAD_NUM 4
 #endif
-#define PREDICTED_SIZE 600000000
+#define PREDICTED_SIZE 10000000
 
 using namespace std;
-//using nbsdx::concurrent::ThreadPool;
 
 ofstream logStringFile;
 uint_fast64_t *base, result, filter_io;
 string input, logString, output;
 int length, offset, endIndex;
-float filter_accuracy = float(0.005);
 bool collisionFound = false;
 
 void writelogString(string text) {
@@ -47,8 +43,8 @@ uint64_t StringToInt(string text)
 }
 
 #ifdef MULTITHREAD
-bool findCollision(int order)
-{
+ bool findCollision(int order)
+ {
 	uint64_t startIndex = order == 0 ? 0 : uint64_t(round(order * (filter_io / THREAD_NUM)));
 	uint64_t endIndex = ++order == THREAD_NUM ? filter_io : uint64_t(round(order * (filter_io / THREAD_NUM)));
 	for (uint64_t i = startIndex; i < endIndex; ++i) {
@@ -63,7 +59,6 @@ bool findCollision(int order)
 	}
 	return false;
 }
-
 #endif
 
 int main() {
@@ -74,7 +69,7 @@ int main() {
 
 	bloom_parameters params;
 	params.projected_element_count = PREDICTED_SIZE;
-	params.false_positive_probability = filter_accuracy;
+	params.false_positive_probability = 0.005;
 	params.random_seed = 0xA5A5A5A5;
 	params.compute_optimal_parameters();
 	bloom_filter filter(params);
@@ -85,14 +80,14 @@ int main() {
 	cout << "Enter number of bites: ";
 	cin >> length;
 #ifdef MULTITHREAD
-	logString = "\nthreads=1+" + to_string(THREAD_NUM) + "\n";
+	logString = "\nthreads=1+" + to_string(threads) + "\n";
 #else
 	logString = "\nthreads=1\n";
 #endif
-	logString += "filter_accuracy=" + to_string(filter_accuracy) + "\n";
+	logString += "filter_accuracy=" + to_string(0.005) + "\n";
 	clock_t begin = clock();
 
-	while (true)
+	for (;;)
 	{
 		input = output;
 		output = sha256(output).substr(0, length / 4);
@@ -109,35 +104,33 @@ int main() {
 						input = IntToString(base[filter_io - 1]); output = IntToString(result); collisionFound = true;
 						break;
 					}
-#else
+#else			
 				/*thread iterators[THREAD_NUM];
 				for (short i = 0; i < THREAD_NUM; ++i)
-					iterators[i] = thread(findCollision, i);
+				iterators[i] = thread(findCollision, i);
 
 				for (short i = 0; i < THREAD_NUM; ++i)
-					if (iterators[i].joinable()) iterators[i].join();*/
-				
+					if (iterators[i].joinable()) iterators[i].join();
+				/*/
 				for (unsigned short i = 0; i < threads; ++i) {
-					function<void()> task = [i]()
+					function<void()> task = [i, threads]()
 					{
-						uint64_t order = i;
-						uint64_t startIndex = order == 0 ? 0 : uint64_t(round(order * (filter_io / THREAD_NUM)));
-						uint64_t endIndex = ++order == THREAD_NUM ? filter_io : uint64_t(round(order * (filter_io / THREAD_NUM)));
+						short int order = i;
+						uint64_t startIndex = order == 0 ? 0 : uint64_t(round(order * (filter_io / threads)));
+						uint64_t endIndex = ++order == threads ? filter_io : uint64_t(round(order * (filter_io / threads)));
 						for (uint64_t j = startIndex; j < endIndex; ++j) {
-							if (collisionFound) break;// return false;
+							if (collisionFound) break;
 							if (result == base[j]) {
 								logString += "lenght=" + to_string(length) + "\n""first_pair=" + IntToString(base[j - 1]) + " " + IntToString(base[j]) + "\n";
 								input = IntToString(base[filter_io - 1]);
 								output = IntToString(result);
 								collisionFound = true;
-								//return true;
 							}
 						}
-						//return false;
 					};
 					pool.AddJob(task);
 				}
-				pool.WaitAll();
+				pool.WaitAll();//*/
 #endif
 				if (collisionFound) break;
 			}
@@ -156,7 +149,7 @@ int main() {
 	logStringFile.open("performance_logString.txt", ios::out | ios::app);
 	writelogString(logString + "second_pair=" + input + " " + output + "\ntime=" + to_string(elapsed_secs) + "\nfilter_io=" + to_string(filter_io) + "\narray_io=" + to_string(iterations) + "\n");
 	logStringFile.close();
-	free(base);
+	delete[] base;
 	system("PAUSE");
 	return 0;
 }
