@@ -131,7 +131,6 @@ std::string sha256(std::string input)
 	for (int i = 0; i < SHA256::DIGEST_SIZE; ++i) {
 		buf[2 * i] = hexmap[(digest[i] & 0xF0) >> 4];
 		buf[2 * i + 1] = hexmap[digest[i] & 0x0F];
-		//sprintf(buf + 2 * i, "%02x", i < 8 ? digest[i] : unsigned char('\0'));
 	}
 	return std::string(buf);
 }

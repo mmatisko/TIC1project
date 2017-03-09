@@ -729,3 +729,373 @@ second_pair=c3ee90fede9e1 63716819f1113
 time=58.638000
 filter_io=8056151
 array_io=4379
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=c14fa99aad0e1 63716819f1113
+second_pair=c3ee90fede9e1 63716819f1113
+time=34.958000
+filter_io=8056151
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=c14fa99aad0e1 63716819f1113
+second_pair=c3ee90fede9e1 63716819f1113
+time=29.535000
+filter_io=8056151
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=56
+first_pair=4c16b81fedc8c0 ad459221a9387a
+second_pair=963dafb0535de0 ad459221a9387a
+time=509.625000
+filter_io=151376810
+array_io=467
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=56
+first_pair=4c16b81fedc8c0 ad459221a9387a
+second_pair=963dafb0535de0 ad459221a9387a
+time=591.679000
+filter_io=151376810
+array_io=467
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=56
+first_pair=4c16b81fedc8c0 ad459221a9387a
+second_pair=963dafb0535de0 ad459221a9387a
+time=565.035000
+filter_io=151376810
+array_io=467
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=c14fa99aad0e1 63716819f1113
+second_pair=c3ee90fede9e1 63716819f1113
+time=30.419000
+filter_io=8056151
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=c14fa99aad0e1 63716819f1113
+second_pair=c3ee90fede9e1 63716819f1113
+time=58.918000
+filter_io=8056151
+array_io=4379
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=c14fa99aad0e1 63716819f1113
+second_pair=c3ee90fede9e1 63716819f1113
+time=24.229000
+filter_io=8056151
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=c14fa99aad0e1 63716819f1113
+second_pair=c3ee90fede9e1 63716819f1113
+time=24.276000
+filter_io=8056151
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=56
+first_pair=4c16b81fedc8c0 ad459221a9387a
+second_pair=963dafb0535de0 ad459221a9387a
+time=567.849000
+filter_io=151376810
+array_io=250
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=c14fa99aad0e1 63716819f1113
+second_pair=c3ee90fede9e1 63716819f1113
+time=42.258000
+filter_io=8056151
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=c14fa99aad0e1 63716819f1113
+second_pair=c3ee90fede9e1 63716819f1113
+time=25.050000
+filter_io=8056151
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=22950e82c50f7 543fd6425fd5b
+second_pair=caa45b892a51b 543fd6425fd5b
+time=78.296000
+filter_io=45023596
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=40
+first_pair=cc3dd914b0 c2f0fc6b3f
+second_pair=251ca3ba0d c2f0fc6b3f
+time=6.869000
+filter_io=1617989
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=40
+first_pair=cc3dd914b0 c2f0fc6b3f
+second_pair=251ca3ba0d c2f0fc6b3f
+time=2.733000
+filter_io=1617989
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=40
+first_pair=a8b9414498 617c147629
+second_pair=98e49cb4d3 617c147629
+time=2.632000
+filter_io=888809
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=48
+first_pair=19523362b26c 3d9033b75363
+second_pair=842212e0cca4 3d9033b75363
+time=21.127000
+filter_io=6409690
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=48
+first_pair=e9046af492d1 ed20d3d273ac
+second_pair=4b6995c9fd76 ed20d3d273ac
+time=12.200000
+filter_io=7431859
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=22950e82c50f7 543fd6425fd5b
+second_pair=caa45b892a51b 543fd6425fd5b
+time=84.594000
+filter_io=45023596
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=22950e82c50f7 543fd6425fd5b
+second_pair=caa45b892a51b 543fd6425fd5b
+time=89.722000
+filter_io=45023596
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=22950e82c50f7 543fd6425fd5b
+second_pair=caa45b892a51b 543fd6425fd5b
+time=89.411000
+filter_io=45023596
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=22950e82c50f7 543fd6425fd5b
+second_pair=caa45b892a51b 543fd6425fd5b
+time=77.957000
+filter_io=45023596
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=79.515000
+filter_io=45023596
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=32
+first_pair=69929d86 69929d86
+second_pair=69929d86 69929d86
+time=0.000000
+filter_io=36603
+array_io=1
+
+threads=1+2
+filter_accuracy=0.005000
+lenght=32
+first_pair=69929d86 69929d86
+second_pair=69929d86 69929d86
+time=0.000000
+filter_io=36603
+array_io=1
+
+threads=1+2
+filter_accuracy=0.005000
+lenght=32
+first_pair=69929d86 69929d86
+second_pair=69929d86 69929d86
+time=0.145000
+filter_io=36603
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=32
+first_pair=69929d86 69929d86
+second_pair=69929d86 69929d86
+time=0.455000
+filter_io=36603
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=32
+first_pair=69929d86 69929d86
+second_pair=69929d86 69929d86
+time=0.766000
+filter_io=36603
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=40
+first_pair=8aedf7807e 8aedf7807e
+second_pair=8aedf7807e 8aedf7807e
+time=3.072000
+filter_io=1618100
+array_io=112
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=44
+first_pair=ea7b7a1298c ea7b7a1298c
+second_pair=ea7b7a1298c ea7b7a1298c
+time=14.623000
+filter_io=9071060
+array_io=4
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=48
+first_pair=7c0b41e8f72b 7c0b41e8f72b
+second_pair=7c0b41e8f72b 7c0b41e8f72b
+time=16.644000
+filter_io=7432596
+array_io=738
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=1b173764a64ae 1b173764a64ae
+lenght=52
+first_pair=1b173764a64ae 1b173764a64ae
+lenght=52
+first_pair=1b173764a64ae 1b173764a64ae
+second_pair=1b173764a64ae 1b173764a64ae
+time=77.058000
+filter_io=45023597
+array_io=2
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=979ddceb868f6 979ddceb868f6
+second_pair=979ddceb868f6 979ddceb868f6
+time=83.781000
+filter_io=45023637
+array_io=43
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=40
+first_pair=5195757f42 5195757f42
+second_pair=5195757f42 5195757f42
+time=3.320000
+filter_io=1618004
+array_io=16
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=40
+first_pair=e92541b83b e92541b83b
+second_pair=e92541b83b e92541b83b
+time=3.371000
+filter_io=1618015
+array_io=27
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=40
+first_pair=c2f0fc6b3f c2f0fc6b3f
+second_pair=c2f0fc6b3f c2f0fc6b3f
+time=5.789000
+filter_io=1617989
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=48
+first_pair=ed20d3d273ac ed20d3d273ac
+second_pair=ed20d3d273ac ed20d3d273ac
+time=16.173000
+filter_io=7431859
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=96.330000
+filter_io=45023596
+array_io=2
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=103.191000
+filter_io=45023596
+array_io=2
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=92.327000
+filter_io=45023596
+array_io=2
+
+Array size limit reached! No collision found! Program ends!
+
+Array size limit reached! No collision found! Program ends!
+
+Array size limit reached! No collision found! Program ends!
