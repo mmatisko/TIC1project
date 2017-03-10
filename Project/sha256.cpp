@@ -32,7 +32,7 @@ void SHA256::transform(const unsigned char *message, unsigned int block_nb)
 	int i;
 	int j;
 	for (i = 0; i < int(block_nb); i++) {
-		sub_block = message + (unsigned __int64(i) << 6);
+		sub_block = message + (uint64(i) << 6);
 		for (j = 0; j < 16; j++) {
 			SHA2_PACK32(&sub_block[j << 2], &w[j]);
 		}

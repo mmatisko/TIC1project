@@ -1099,3 +1099,86 @@ Array size limit reached! No collision found! Program ends!
 Array size limit reached! No collision found! Program ends!
 
 Array size limit reached! No collision found! Program ends!
+
+Array size limit reached! No collision found! Program ends!
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=40
+first_pair=c2f0fc6b3f c2f0fc6b3f
+second_pair=c2f0fc6b3f c2f0fc6b3f
+time=3.693000
+filter_io=1617989
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=48
+first_pair=ed20d3d273ac ed20d3d273ac
+second_pair=ed20d3d273ac ed20d3d273ac
+time=13.556000
+filter_io=7431859
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=78.151000
+filter_io=45023596
+array_io=2
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=80.230000
+filter_io=45023596
+array_io=2
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=164.102000
+filter_io=45023596
+array_io=2
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=78.644000
+filter_io=45023596
+array_io=2
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=84.599000
+filter_io=45023596
+array_io=2
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=91.615000
+filter_io=45023596
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=86.411000
+filter_io=45023596
+array_io=1

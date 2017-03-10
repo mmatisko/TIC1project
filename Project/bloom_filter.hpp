@@ -19,11 +19,13 @@
 #ifndef INCLUDE_BLOOM_FILTER_HPP
 #define INCLUDE_BLOOM_FILTER_HPP
 
+#include <algorithm>
 #include <cmath>
+#include <cstddef>
 #include <iterator>
 #include <limits>
+#include <string>
 #include <vector>
-#include <algorithm>
 
 
 static const std::size_t bits_per_char = 0x08;    // 8 bits in 1 char(unsigned)
