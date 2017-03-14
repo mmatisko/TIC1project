@@ -1494,3 +1494,120 @@ second_pair=894cea8cbe536 6d10a997db25a
 time=68.714000
 filter_io=31619733
 array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=63.053000
+filter_io=31619733
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=40
+first_pair=cc3dd914b0 c2f0fc6b3f
+second_pair=251ca3ba0d c2f0fc6b3f
+time=7.113000
+filter_io=2898971
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=40
+first_pair=cc3dd914b0 c2f0fc6b3f
+second_pair=251ca3ba0d c2f0fc6b3f
+time=6.439000
+filter_io=2898971
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=40
+first_pair=cc3dd914b0 c2f0fc6b3f
+second_pair=251ca3ba0d c2f0fc6b3f
+time=5.961000
+filter_io=2898971
+array_io=1
+
+threads=1+4
+filter_accuracy=0.001000
+lenght=40
+first_pair=cc3dd914b0 c2f0fc6b3f
+second_pair=251ca3ba0d c2f0fc6b3f
+time=201.881000
+filter_io=2898971
+array_io=1
+
+threads=1+4
+filter_accuracy=0.001000
+lenght=40
+first_pair=cc3dd914b0 c2f0fc6b3f
+second_pair=251ca3ba0d c2f0fc6b3f
+time=6.954000
+filter_io=2898971
+array_io=1
+
+threads=1+4
+filter_accuracy=0.001000
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=59.897000
+filter_io=31619733
+array_io=1
+
+threads=1+4
+filter_accuracy=0.001000
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=61.269000
+filter_io=31619733
+array_io=1
+
+threads=1+4
+filter_accuracy=0.001000
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=69.142000
+filter_io=31619733
+array_io=1
+
+threads=1+4
+filter_accuracy=0.001000
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=71.878000
+filter_io=31619733
+array_io=682
+
+threads=1+4
+filter_accuracy=0.001000
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=61.773000
+filter_io=31619733
+array_io=1
+
+threads=1+4
+filter_accuracy=0.001000
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=59.274000
+filter_io=31619733
+array_io=1
+
+threads=1+4
+filter_accuracy=0.001000
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=61.269000
+filter_io=31619733
+array_io=1

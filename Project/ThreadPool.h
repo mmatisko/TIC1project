@@ -20,7 +20,7 @@ public:
 		_jobsLeft(0),
 		_bailout(false)
 	{
-		_threads = std::vector<std::thread>(threadCount);
+		_threads = vector<thread>(threadCount);
 
 		for (int index = 0; index < threadCount; ++index)
 		{
@@ -44,16 +44,16 @@ public:
 	*  a thread is woken up to take the job. If all threads are busy,
 	*  the job is added to the end of the queue.
 	*/
-	void AddJob(std::function<void(void)> job)
+	void AddJob(function<void(void)> job)
 	{
 		// scoped lock
 		{
-			std::lock_guard<std::mutex> lock(_queueMutex);
+			lock_guard<mutex> lock(_queueMutex);
 			_queue.emplace(job);
 		}
 		// scoped lock
 		{
-			std::lock_guard<std::mutex> lock(_jobsLeftMutex);
+			lock_guard<mutex> lock(_jobsLeftMutex);
 			++_jobsLeft;
 		}
 		_jobAvailableVar.notify_one();
@@ -69,7 +69,7 @@ public:
 	{
 		// scoped lock
 		{
-			std::lock_guard<std::mutex> lock(_queueMutex);
+			lock_guard<mutex> lock(_queueMutex);
 			if (_bailout)
 			{
 				return;
@@ -97,7 +97,7 @@ public:
 	*/
 	void WaitAll()
 	{
-		std::unique_lock<std::mutex> lock(_jobsLeftMutex);
+		unique_lock<mutex> lock(_jobsLeftMutex);
 		if (_jobsLeft > 0)
 		{
 			_waitVar.wait(lock, [this]
@@ -116,11 +116,11 @@ private:
 	{
 		while (true)
 		{
-			std::function<void(void)> job;
+			function<void(void)> job;
 
 			// scoped lock
 			{
-				std::unique_lock<std::mutex> lock(_queueMutex);
+				unique_lock<mutex> lock(_queueMutex);
 
 				if (_bailout)
 				{
@@ -147,7 +147,7 @@ private:
 
 			// scoped lock
 			{
-				std::lock_guard<std::mutex> lock(_jobsLeftMutex);
+				lock_guard<mutex> lock(_jobsLeftMutex);
 				--_jobsLeft;
 			}
 
@@ -155,15 +155,15 @@ private:
 		}
 	}
 
-	std::vector<std::thread> _threads;
-	std::queue<std::function<void(void)>> _queue;
+	vector<thread> _threads;
+	queue<function<void(void)>> _queue;
 
 	int _jobsLeft;
 	bool _bailout;
-	std::condition_variable _jobAvailableVar;
-	std::condition_variable _waitVar;
-	std::mutex _jobsLeftMutex;
-	std::mutex _queueMutex;
+	condition_variable _jobAvailableVar;
+	condition_variable _waitVar;
+	mutex _jobsLeftMutex;
+	mutex _queueMutex;
 };
 
 #endif //CONCURRENT_THREADPOOL_H

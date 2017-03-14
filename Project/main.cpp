@@ -16,20 +16,20 @@
 using namespace std;
 
 // bit length, number of used threads for search hashInt in array
-int bitLength, threads;
+int bitLength = 32, threads = 0;
 
 // base - array of items, maxItems - array size, hashInt = int representation of hash
 // filter_io - number of array_io over filter, array_io - number of array_io over array
 uint64_t *base, maxItems, hashInt, filter_io = 0, array_io = 0;
 
 //  hashString - actual hash in string, logString - string with log informations
-string hashString, logString;
+string hashString = "ahoj", logString = "";
 
 // flag of collision searching process
 volatile bool collisionFound = false;
 
-// time of programme 
-double elapsed_secs;
+// time of programme, false probability of bloom filter
+double elapsed_secs, falseProbability = 0.005;
 
 // start time of programme
 clock_t startTime;
@@ -41,8 +41,10 @@ SHA256 *hasher;
 ThreadPool *pool;
 
 // array of bloom filter
-//vector<bloom_filter> filters;
 bloom_filter *filter;
+
+// enable logging
+bool logging = false;
 
 /*
  * Logging function used for write log data to console & log file
@@ -75,14 +77,14 @@ string IntToString(uint64_t number) {
 /*
 *  Function for converting hash stored in uint64 to string
 */
-uint64_t StringToInt(string text) {
+uint64_t (*StringToInt)(string) = [](string text){
 	return stoull(text, nullptr, 16);
-}
+};
 
 /*
 *  Initalize parameters for bloom filter
 */
-void InitBloomFilter(double falseProbability) {
+void InitBloomFilter() {
 	bloom_parameters params;
 	params.projected_element_count = maxItems;
 	params.false_positive_probability = falseProbability;
@@ -107,28 +109,16 @@ void Timer(bool start) {
 *  Initalize parameters for thread pool
 *  Start programme timer
 */
-void InitThreadPool(unsigned threadNum) {
-	threads = threadNum <= 0 ? thread::hardware_concurrency() : threadNum;
+void InitThreadPool() {
 	pool = new ThreadPool(threads);
-	logString = "\nthreads=1+" + to_string(threads) + "\n" + "filter_accuracy=" + to_string(0.005) + "\n";
+	logString = "\nthreads=1+" + to_string(threads) + "\n" + "filter_accuracy=" + to_string(falseProbability) + "\n";
 	Timer(true);
-}
-
-/*
-*  Initalize system variables
-*/
-void InitVariables(int lenght, long long predictedSize) {
-	hashString = "ahoj";
-	maxItems = predictedSize;
-	base = new uint64_t[predictedSize];
-	bitLength = lenght;
-	hasher = new SHA256();
 }
 
 /*
  * Function for iteration over array of hashes in uint64_t 
  */
-void ArrayIteration(short int i) {
+function<void(short)> ArrayIteration = [](short i) {
 	short int order = i;
 	uint64_t startIndex = order == 0 ? 0 : uint64_t(round(order * (filter_io / threads)));
 	uint64_t endIndex = ++order == threads ? filter_io : uint64_t(round(order * (filter_io / threads)));
@@ -153,17 +143,16 @@ void ChainingRoutine() {
 		hashString = hasher->ComputeHash(hashString).substr(0, bitLength / 4);
 		hashInt = StringToInt(hashString);
 		++filter_io;
-		if (filter_io % 20000000 == 0)
+		if (logging && filter_io % 20000000 == 0)
 			cout << "filter_io: " << to_string(filter_io/1000000) << endl;
 		if (filter->contains(hashInt))
 		{
 			++array_io;
-			if(array_io % 5000 == 0)
+			if(logging && array_io % 5000 == 0)
 				cout << "array_io: " << to_string(array_io/1000) << endl;
 			{
 				for (short int i = 0; i < threads; ++i) {
-					function<void()> task = [i]() {ArrayIteration(i); };
-					pool->AddJob(task);
+					pool->AddJob(bind(ArrayIteration,i));
 				}
 				pool->WaitAll();
 				if (collisionFound) return;
@@ -188,19 +177,46 @@ void Cleanup() {
 		logString += "\ntime=" + to_string(elapsed_secs) + "\nfilter_io=" + to_string(filter_io)
 		+ "\narray_io=" + to_string(array_io) + "\n";
 	writelogString(logString);
+	delete pool; 
+	delete hasher;
+	delete filter;
 	delete[] base;
 	system("PAUSE");
 }
 
 /*
+*  Initalize system variables from cmd arguments
+*/
+void InitVariables(int argc, char* argv[])
+{
+	threads = thread::hardware_concurrency();
+	for(int i = 1; i < argc; ++i)
+	{
+		switch(argv[i][1])
+		{
+		case 'i': {hashString = argv[++i]; break;}
+		case 'b': {bitLength = atoi(argv[++i]); break;}
+		case 'p': {falseProbability = atof(argv[++i]); break;}
+		case 'c': {maxItems = atoll(argv[++i]) * 1000000; break;}
+		case 't': {threads = atoi(argv[++i]); break;}
+		case 'l': {logging = true; break;}
+		default: ;
+		}
+	}
+	base = new uint64_t[maxItems];
+	hasher = new SHA256();
+}
+
+/*
  * Main function of programme
  * order of parameters:
- * 0-Program 1-bites 2-falseProbability 3-predictedSize 4-threads(optional)
+ * 0-Program 1-input 2-bites 3-falseProbability
+ * 4-predictedSize(in M) 5-threads(optional) 6-logging(optional)
  */
 int main(int argc, char* argv[]) {
-	InitVariables(atoi(argv[1]), atoll(argv[3]));
-	InitBloomFilter(atof(argv[2]));
-	InitThreadPool(argc > 4 ? atoi(argv[4]) : 0);
+	InitVariables(argc, argv);
+	InitBloomFilter();
+	InitThreadPool();
 	ChainingRoutine();
 	Cleanup();
 	return 0;
