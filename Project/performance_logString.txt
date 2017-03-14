@@ -1182,3 +1182,315 @@ second_pair=543fd6425fd5b 543fd6425fd5b
 time=86.411000
 filter_io=45023596
 array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=48
+first_pair=ed20d3d273ac ed20d3d273ac
+second_pair=ed20d3d273ac ed20d3d273ac
+time=13.425000
+filter_io=7431859
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=48
+first_pair=ed20d3d273ac ed20d3d273ac
+second_pair=ed20d3d273ac ed20d3d273ac
+time=406.871000
+filter_io=7431859
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=48
+first_pair=ed20d3d273ac ed20d3d273ac
+second_pair=ed20d3d273ac ed20d3d273ac
+time=57.682000
+filter_io=7431859
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=249.316000
+filter_io=45023596
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=78.967000
+filter_io=45023596
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=76.227000
+filter_io=45023596
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=88.391000
+filter_io=45023596
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=94.718000
+filter_io=45023596
+array_io=1
+
+Array size limit reached! No collision found! Program ends!
+
+Array size limit reached! No collision found! Program ends!
+
+Array size limit reached! No collision found! Program ends!
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=89.072000
+filter_io=45023596
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=92.570000
+filter_io=45023596
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=40
+first_pair=c2f0fc6b3f c2f0fc6b3f
+second_pair=c2f0fc6b3f c2f0fc6b3f
+time=15.646000
+filter_io=1617989
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=48
+first_pair=ed20d3d273ac ed20d3d273ac
+second_pair=ed20d3d273ac ed20d3d273ac
+time=71.814000
+filter_io=7431859
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=40
+first_pair=c2f0fc6b3f c2f0fc6b3f
+second_pair=c2f0fc6b3f c2f0fc6b3f
+time=3.839000
+filter_io=1617989
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=40
+first_pair=c2f0fc6b3f c2f0fc6b3f
+second_pair=c2f0fc6b3f c2f0fc6b3f
+time=6.212000
+filter_io=1617989
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=86.661000
+filter_io=45023596
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=32
+first_pair=69929d86 69929d86
+second_pair=69929d86 69929d86
+time=2.045000
+filter_io=36603
+array_io=36603
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=32
+first_pair=69929d86 69929d86
+second_pair=69929d86 69929d86
+time=1.213000
+filter_io=36603
+array_io=36603
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=32
+first_pair=69929d86 69929d86
+second_pair=69929d86 69929d86
+time=0.597000
+filter_io=36603
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=32
+first_pair=69929d86 69929d86
+second_pair=69929d86 69929d86
+time=0.291000
+filter_io=36603
+array_io=2
+
+threads=1+0
+filter_accuracy=0.005000
+lenght=32
+first_pair=69929d86 69929d86
+second_pair=69929d86 69929d86
+time=0.361000
+filter_io=36603
+array_io=5
+
+threads=1+0
+filter_accuracy=0.005000
+lenght=32
+first_pair=69929d86 69929d86
+second_pair=69929d86 69929d86
+time=0.323000
+filter_io=36603
+array_io=11
+
+threads=1+0
+filter_accuracy=0.005000
+lenght=32
+first_pair=69929d86 69929d86
+second_pair=69929d86 69929d86
+time=0.390000
+filter_io=36603
+array_io=17
+
+threads=1+0
+filter_accuracy=0.005000
+lenght=32
+first_pair=69929d86 69929d86
+second_pair=69929d86 69929d86
+time=0.054000
+filter_io=36603
+array_io=17
+
+threads=1+0
+filter_accuracy=0.005000
+lenght=32
+first_pair=69929d86 69929d86
+second_pair=69929d86 69929d86
+time=0.204000
+filter_io=36603
+array_io=17
+
+threads=1+0
+filter_accuracy=0.005000
+lenght=32
+first_pair=69929d86 69929d86
+second_pair=69929d86 69929d86
+time=0.715000
+filter_io=36603
+array_io=17
+
+threads=1+0
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=165.422000
+filter_io=45023596
+array_io=8
+
+threads=1+0
+filter_accuracy=0.005000
+lenght=52
+first_pair=543fd6425fd5b 543fd6425fd5b
+second_pair=543fd6425fd5b 543fd6425fd5b
+time=173.008000
+filter_io=45023596
+array_io=8
+
+threads=1+0
+filter_accuracy=0.005000
+lenght=52
+first_pair=22950e82c50f7 543fd6425fd5b
+second_pair=caa45b892a51b 543fd6425fd5b
+time=81.694000
+filter_io=45023596
+array_io=8
+
+threads=1+0
+filter_accuracy=0.005000
+lenght=52
+first_pair=22950e82c50f7 543fd6425fd5b
+second_pair=caa45b892a51b 543fd6425fd5b
+time=90.314000
+filter_io=45023596
+array_io=8
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=22950e82c50f7 543fd6425fd5b
+second_pair=caa45b892a51b 543fd6425fd5b
+time=81.472000
+filter_io=45023596
+array_io=8
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=22950e82c50f7 543fd6425fd5b
+second_pair=caa45b892a51b 543fd6425fd5b
+time=82.170000
+filter_io=45023596
+array_io=8
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=22950e82c50f7 543fd6425fd5b
+second_pair=caa45b892a51b 543fd6425fd5b
+time=96.128000
+filter_io=45023596
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=22950e82c50f7 543fd6425fd5b
+second_pair=caa45b892a51b 543fd6425fd5b
+time=93.054000
+filter_io=45023596
+array_io=1
+
+threads=1+4
+filter_accuracy=0.005000
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=68.714000
+filter_io=31619733
+array_io=1

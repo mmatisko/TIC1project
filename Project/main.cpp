@@ -1,12 +1,14 @@
 ﻿#include <iostream>
 #include <fstream>
-#include <sstream>
 #include <string>
 #include <ctime>
+#include <future>
 
-// source: http://www.zedwood.com/article/cpp-sha256-function
+#include <chrono>
+
+// adapted to object oriented library, source: http://www.zedwood.com/article/cpp-sha256-function
 #include "sha256.h"
-// source: https://github.com/ArashPartow/bloom
+// removed redundant statements, source: https://github.com/ArashPartow/bloom
 #include "bloom_filter.hpp"
 // source: https://github.com/stfx/ThreadPool2
 #include "ThreadPool.h"
@@ -17,14 +19,14 @@ using namespace std;
 int bitLength, threads;
 
 // base - array of items, maxItems - array size, hashInt = int representation of hash
-// filter_io - number of iterations over filter, array_io - number of iterations over array
-uint64_t *base, maxItems, hashInt, filter_io, iterations;
+// filter_io - number of array_io over filter, array_io - number of array_io over array
+uint64_t *base, maxItems, hashInt, filter_io = 0, array_io = 0;
 
 //  hashString - actual hash in string, logString - string with log informations
 string hashString, logString;
 
 // flag of collision searching process
-bool collisionFound = false;
+volatile bool collisionFound = false;
 
 // time of programme 
 double elapsed_secs;
@@ -32,10 +34,14 @@ double elapsed_secs;
 // start time of programme
 clock_t startTime;
 
+// SHA256 computer object
+SHA256 *hasher;
+
 // pointer of threadpool used for searching in array
 ThreadPool *pool;
 
-// pointer of bloom filter
+// array of bloom filter
+//vector<bloom_filter> filters;
 bloom_filter *filter;
 
 /*
@@ -53,40 +59,36 @@ void writelogString(string text) {
  *  Function for converting hash stored in uint64 to string
  */
 string IntToString(uint64_t number) {
-	stringstream stream;
-	stream << hex << number;
-	string result(stream.str());
-	return hashString;
+	static char const digits[] = "0123456789abcdef";
+	string results;
+	while (number != 0 || results.size() < 1) {
+		results += digits[number % 16];
+		number /= 16;
+	}
+	reverse(results.begin(), results.end());
+	while (results.length() < bitLength / 4) {
+		results.insert(0, "0");
+	}
+	return results;
 }
 
 /*
 *  Function for converting hash stored in uint64 to string
 */
 uint64_t StringToInt(string text) {
-	uint64_t temp;
-	string::size_type sz = 0;
-	temp = stoull(text, &sz, 16);
-	return temp;
+	return stoull(text, nullptr, 16);
 }
 
 /*
 *  Initalize parameters for bloom filter
 */
-void InitBloomFilter(double falseProbability, unsigned long long predictedSize) {
+void InitBloomFilter(double falseProbability) {
 	bloom_parameters params;
-	params.projected_element_count = predictedSize;
+	params.projected_element_count = maxItems;
 	params.false_positive_probability = falseProbability;
 	params.random_seed = 0xA5A5A5A5;
 	params.compute_optimal_parameters();
 	filter = new bloom_filter(params);
-}
-
-/*
-*  Initalize parameters for thread pool
-*/
-void InitThreadPool(unsigned threadNum = 0) {
-	threads = threadNum == 0 && threadNum < thread::hardware_concurrency() ? thread::hardware_concurrency() : threadNum;
-	pool = new ThreadPool(threads);
 }
 
 /*
@@ -102,17 +104,25 @@ void Timer(bool start) {
 }
 
 /*
+*  Initalize parameters for thread pool
+*  Start programme timer
+*/
+void InitThreadPool(unsigned threadNum) {
+	threads = threadNum <= 0 ? thread::hardware_concurrency() : threadNum;
+	pool = new ThreadPool(threads);
+	logString = "\nthreads=1+" + to_string(threads) + "\n" + "filter_accuracy=" + to_string(0.005) + "\n";
+	Timer(true);
+}
+
+/*
 *  Initalize system variables
 */
 void InitVariables(int lenght, long long predictedSize) {
-	hashString = "abc";
-	filter_io = 0;
-	iterations = 0;
+	hashString = "ahoj";
 	maxItems = predictedSize;
 	base = new uint64_t[predictedSize];
 	bitLength = lenght;
-	logString = "\nthreads=1+" + to_string(threads) + "\n" + "filter_accuracy=" + to_string(0.005) + "\n";
-	Timer(true);
+	hasher = new SHA256();
 }
 
 /*
@@ -140,14 +150,18 @@ void ArrayIteration(short int i) {
  */
 void ChainingRoutine() {
 	for (;;) {
-		hashString = sha256(hashString).substr(0, bitLength / 4);
+		hashString = hasher->ComputeHash(hashString).substr(0, bitLength / 4);
 		hashInt = StringToInt(hashString);
 		++filter_io;
+		if (filter_io % 20000000 == 0)
+			cout << "filter_io: " << to_string(filter_io/1000000) << endl;
 		if (filter->contains(hashInt))
 		{
-			++iterations;
+			++array_io;
+			if(array_io % 5000 == 0)
+				cout << "array_io: " << to_string(array_io/1000) << endl;
 			{
-				for (unsigned short i = 0; i < threads; ++i) {
+				for (short int i = 0; i < threads; ++i) {
 					function<void()> task = [i]() {ArrayIteration(i); };
 					pool->AddJob(task);
 				}
@@ -172,7 +186,7 @@ void Cleanup() {
 	Timer(false);
 	if (logString.length() != 61)
 		logString += "\ntime=" + to_string(elapsed_secs) + "\nfilter_io=" + to_string(filter_io)
-		+ "\narray_io=" + to_string(iterations) + "\n";
+		+ "\narray_io=" + to_string(array_io) + "\n";
 	writelogString(logString);
 	delete[] base;
 	system("PAUSE");
@@ -184,9 +198,9 @@ void Cleanup() {
  * 0-Program 1-bites 2-falseProbability 3-predictedSize 4-threads(optional)
  */
 int main(int argc, char* argv[]) {
-	InitBloomFilter(atof(argv[2]), 3 * atoll(argv[3]));
-	InitThreadPool(argc > 4 ? atoi(argv[4]) : 0);
 	InitVariables(atoi(argv[1]), atoll(argv[3]));
+	InitBloomFilter(atof(argv[2]));
+	InitThreadPool(argc > 4 ? atoi(argv[4]) : 0);
 	ChainingRoutine();
 	Cleanup();
 	return 0;
