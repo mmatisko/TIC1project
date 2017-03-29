@@ -1638,3 +1638,41 @@ second_pair=1d5bd42e 69929d86
 time=0.573000
 filter_io=58636
 array_io=1
+
+Array size limit reached! No collision found! Program ends!
+
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=75.163000
+filter_io=31619733
+array_io=1
+
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=79.594000
+filter_io=31619733
+array_io=1
+
+threads=1+4
+filter_accuracy=0.000100
+lenght=56
+first_pair=75e6a162f220d9 8c92287974757b
+second_pair=9dfc299fee7ea8 8c92287974757b
+time=206.651000
+filter_io=80049364
+array_io=1
+
+threads=1+4
+filter_accuracy=0.000100
+lenght=56
+first_pair=75e6a162f220d9 8c92287974757b
+second_pair=9dfc299fee7ea8 8c92287974757b
+time=172.230000
+filter_io=80049364
+array_io=1
