@@ -1629,3 +1629,12 @@ second_pair=1d5bd42e 69929d86
 time=0.422000
 filter_io=58636
 array_io=1
+
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=0.573000
+filter_io=58636
+array_io=1

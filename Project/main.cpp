@@ -144,12 +144,12 @@ void ChainingRoutine() {
 		hashInt = StringToInt(hashString);
 		++filter_io;
 		if (logging && filter_io % 20000000 == 0)
-			cout << "filter_io: " << to_string(filter_io/1000000) << endl;
+			cout << "filter_io: " << to_string(filter_io/2000000) << endl;
 		if (filter->contains(hashInt))
 		{
 			++array_io;
 			if(logging && array_io % 5000 == 0)
-				cout << "array_io: " << to_string(array_io/1000) << endl;
+				cout << "array_io: " << to_string(array_io/5000) << endl;
 			{
 				for (short int i = 0; i < threads; ++i) {
 					pool->AddJob(bind(ArrayIteration,i));
