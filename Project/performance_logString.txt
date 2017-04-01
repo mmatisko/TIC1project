@@ -1676,3 +1676,72 @@ second_pair=9dfc299fee7ea8 8c92287974757b
 time=172.230000
 filter_io=80049364
 array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86 time=0.297000
+filter_io=58636
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=0.100000
+filter_io=58636
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=40
+first_pair=cc3dd914b0 c2f0fc6b3f
+second_pair=251ca3ba0d c2f0fc6b3f
+time=6.175000
+filter_io=2898971
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=40
+first_pair=cc3dd914b0 c2f0fc6b3f
+second_pair=251ca3ba0d c2f0fc6b3f
+time=5.550000
+filter_io=2898971
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=40
+first_pair=cc3dd914b0 c2f0fc6b3f
+second_pair=251ca3ba0d c2f0fc6b3f
+time=5.981000
+filter_io=2898971
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=40
+first_pair=cc3dd914b0 c2f0fc6b3f
+second_pair=251ca3ba0d c2f0fc6b3f
+time=6.180000
+filter_io=2898971
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=40
+first_pair=cc3dd914b0 c2f0fc6b3f
+second_pair=251ca3ba0d c2f0fc6b3f
+time=5.807000
+filter_io=2898971
+array_io=1

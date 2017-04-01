@@ -1,10 +1,6 @@
 ﻿#include <iostream>
 #include <fstream>
 #include <string>
-#include <ctime>
-#include <future>
-
-#include <chrono>
 
 // adapted to object oriented library, source: http://www.zedwood.com/article/cpp-sha256-function
 #include "sha256.h"
@@ -12,6 +8,7 @@
 #include "bloom_filter.hpp"
 // source: https://github.com/stfx/ThreadPool2
 #include "ThreadPool.h"
+#include "Timer.hpp"
 
 using namespace std;
 
@@ -28,11 +25,11 @@ string hashString = "ahoj", logString = "";
 // flag of collision searching process
 volatile bool collisionFound = false;
 
-// time of programme, false probability of bloom filter
-double elapsed_secs, falseProbability = 0.005;
+// false probability of bloom filter
+double falseProbability = 0.005;
 
 // start time of programme
-clock_t startTime;
+Timer *timer;
 
 // SHA256 computer object
 SHA256 *hasher;
@@ -86,23 +83,11 @@ uint64_t (*StringToInt)(string) = [](string text){
 */
 void InitBloomFilter() {
 	bloom_parameters params;
-	params.projected_element_count = maxItems;
+	params.projected_element_count = maxItems*3;
 	params.false_positive_probability = falseProbability;
 	params.random_seed = 0xA5A5A5A5;
 	params.compute_optimal_parameters();
 	filter = new bloom_filter(params);
-}
-
-/*
-*  Useless function for time control, just for fun
-*/
-void Timer(bool start) {
-	if (start)
-		startTime = clock();
-	else {
-		clock_t end = clock();
-		elapsed_secs = double(end - start) / CLOCKS_PER_SEC;
-	}
 }
 
 /*
@@ -111,8 +96,8 @@ void Timer(bool start) {
 */
 void InitThreadPool() {
 	pool = new ThreadPool(threads);
-	logString = "\nthreads=1+" + to_string(threads) + "\n" + "filter_accuracy=" + to_string(falseProbability) + "\n";
-	Timer(true);
+	logString = "\ninput=" + hashString + "\nthreads=1+" + to_string(threads) + "\n" + "filter_accuracy=" + to_string(falseProbability) + "\n";
+	timer = new Timer();
 }
 
 /*
@@ -143,8 +128,10 @@ void ChainingRoutine() {
 		hashString = hasher->ComputeHash(hashString).substr(0, bitLength / 4);
 		hashInt = StringToInt(hashString);
 		++filter_io;
-		if (logging && filter_io % 10000000 == 0)
-			cout << "filter_io: " << to_string(filter_io/1000000) << endl;
+		if (logging && filter_io % 10000000 == 0) {
+			cout << "filter_io: " << to_string(filter_io / 1000000) << endl;
+			timer->LapStop();
+		}
 		if (filter->contains(hashInt))
 		{
 			++array_io;
@@ -172,15 +159,16 @@ void ChainingRoutine() {
 */
 void Cleanup() {
 	pool->JoinAll();
-	Timer(false);
+	timer->Stop();
 	if (logString.length() != 61)
-		logString += "\ntime=" + to_string(elapsed_secs) + "\nfilter_io=" + to_string(filter_io)
-		+ "\narray_io=" + to_string(array_io) + "\n";
+		logString += timer->GetStringTime() + "\nfilter_io=" + to_string(filter_io)
+				   + "\narray_io=" + to_string(array_io) + "\n";
 	writelogString(logString);
 	delete pool; 
 	delete hasher;
 	delete filter;
 	delete[] base;
+	cout << endl << timer->GetLapsTime() << endl;
 	system("PAUSE");
 }
 
