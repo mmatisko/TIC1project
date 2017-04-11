@@ -76,10 +76,10 @@ function<void(short)> ArrayIteration = [](short order) {
 	uint64_t endIndex = ++order == threads ? uint64_t(ceil(filter_io/mod)) : uint64_t(round(order * (ceil(filter_io/mod) / threads)));
 	for (uint64_t j = startIndex; j < endIndex; ++j) {
 		if (collisionFound) break;
-		if (hashInt == base[j]) {
+		if (hashString == base[j]) {
 
 			collisionFound = true; //for quit other thread
-			hashString = IntToString(base[j - 1]);
+			hashString = base[j - 1];//IntToString(base[j - 1]);
 			delete filter;
 			delete[] base;
 			string* baseS = new string[mod];
@@ -95,7 +95,7 @@ function<void(short)> ArrayIteration = [](short order) {
 			hashString = backupString;
 			for (int k = 0; k < 2*mod; ++k) { //compute and compare hashes from ring
 				hashString = hasher->ComputeHash(hashString).substr(0, bitLength / 4);
-				hashInt = StringToInt(hashString);
+				//hashInt = StringToInt(hashString);
 				if (filter->contains(hashString)) {
 					for (int i = 0; i < 2*mod; ++i)
 					{
@@ -124,14 +124,15 @@ void ChainingRoutine() {
 	for (;;) {
 		
 		hashString = hasher->ComputeHash(hashString).substr(0, bitLength / 4);
-		hashInt = StringToInt(hashString);
+		//hashInt = StringToInt(hashString);
 
 		if (logging && filter_io % 10000000 == 0 && filter_io > 0) {
 			cout << "filter_io: " << to_string(filter_io / 1000000) << endl;
 			timer->LapStop();
 		}
 		
-		if (filter->contains(hashInt))
+		//if (filter->contains(hashInt))
+		if (filter->contains(hashString))
 		{
 			++array_io;
 			if (logging && array_io % 1000 == 0)
@@ -150,8 +151,10 @@ void ChainingRoutine() {
 		}
 		
 		if (filter_io % mod == 0) {
-			base[filter_io / mod] = hashInt;
-			filter->insert(hashInt);
+			//base[filter_io / mod] = hashInt;
+			base[filter_io / mod] = hashString;
+			//filter->insert(hashInt);
+			filter->insert(hashString);
 			backupString = back;
 			back = hashString;
 
@@ -199,7 +202,8 @@ void InitVariables(int argc, char* argv[])
 		default: ;
 		}
 	}
-	base = new uint64_t[capacity / mod];
+	//base = new uint64_t[capacity / mod];
+	base = new string[capacity / mod];
 	hasher = new SHA256();
 }
 

@@ -26,13 +26,13 @@ int multiplier = 5;
 int mod = 10;
 
 // array of itemshashInt => int representation of has
-uint64_t *base;
+string *base;
 
 // size of array 
 uint64_t capacity;
 
 // capacity - array size
-uint64_t hashInt;
+//uint64_t hashInt;
 
 // filter_io - number of array_io over filter
 uint64_t filter_io = 0;
