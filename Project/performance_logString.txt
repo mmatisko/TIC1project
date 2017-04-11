@@ -1745,3 +1745,797 @@ second_pair=251ca3ba0d c2f0fc6b3f
 time=5.807000
 filter_io=2898971
 array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=0.221000
+filter_io=58636
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=0.195000
+filter_io=58636
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=0.163000
+filter_io=58636
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=0.251000
+filter_io=58636
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=00000000 5d345c64
+second_pair=00000000 5d345c64
+time=2.698000
+filter_io=1918000
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=00000000 fcd83c56
+second_pair=00000000 fcd83c56
+time=0.543000
+filter_io=227670
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=0.216000
+filter_io=58636
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=00000000 1c40d6a1
+second_pair=00000000 1c40d6a1
+time=0.256000
+filter_io=77418
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=24217c0e 575c572d
+second_pair=24217c0e 575c572d
+time=0.404000
+filter_io=117072
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=a693f9ad 74d49a14
+second_pair=a693f9ad 74d49a14
+time=0.253000
+filter_io=58640
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=68db84f7 d51981ba
+second_pair=68db84f7 d51981ba
+time=0.219000
+filter_io=58700
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=417cea566fc3d 090ae9add1c20
+second_pair=417cea566fc3d 090ae9add1c20
+time=77.204000
+filter_io=31619800
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=a9fe80b8dd9a2 ccba3d7703789
+second_pair=a9fe80b8dd9a2 ccba3d7703789
+time=77.067000
+filter_io=31620000
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=76.623000
+filter_io=31619732
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=a9fe80b8dd9a2 ccba3d7703789
+second_pair=a9fe80b8dd9a2 ccba3d7703789
+time=71.885000
+filter_io=31620000
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=a9fe80b8dd9a2 ccba3d7703789
+second_pair=a9fe80b8dd9a2 ccba3d7703789
+time=72.220000
+filter_io=31620000
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=0000000000000 cfab6dca7cf4c
+second_pair=0000000000000 cfab6dca7cf4c
+time=35.157000
+filter_io=31620317
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=56
+first_pair=00000000000000 675ca40d60dc33
+second_pair=00000000000000 675ca40d60dc33
+time=98.333000
+filter_io=80050058
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=56
+first_pair=e9c4ded1d2fc08 675ca40d60dc33
+second_pair=224d4f54e862f0 675ca40d60dc33
+time=97.131000
+filter_io=80050058
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=56
+first_pair=75e6a162f220d9 8c92287974757b
+second_pair=9dfc299fee7ea8 8c92287974757b
+time=221.372000
+filter_io=80049363
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=56
+first_pair=0c44a7bc9958e1 9c6e452093152a
+second_pair=d538ab4f6837e1 9c6e452093152a
+time=95.895000
+filter_io=80049458
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=56
+first_pair=e9c4ded1d2fc08 675ca40d60dc33
+second_pair=224d4f54e862f0 675ca40d60dc33
+time=94.824000
+filter_io=80050058
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=aacaf9fe 61a8ede0
+second_pair=08e8e717 61a8ede0
+time=0.121000
+filter_io=58781
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=8fa3054dd5e3b cfab6dca7cf4c
+second_pair=5f5e6e9d0bcdc cfab6dca7cf4c
+time=41.679000
+filter_io=31620317
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=56
+first_pair=e9c4ded1d2fc08 675ca40d60dc33
+second_pair=224d4f54e862f0 675ca40d60dc33
+time=100.608000
+filter_io=80050058
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+
+time=0.180000
+filter_io=58781
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+
+time=0.164000
+filter_io=58781
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=aacaf9fe 61a8ede0
+second_pair=bb36f6c5 61a8ede0
+time=0.181000
+filter_io=58562
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=aacaf9fe 61a8ede0
+second_pair=bb36f6c5 61a8ede0
+time=0.154000
+filter_io=58562
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=aacaf9fe 61a8ede0
+second_pair=bb36f6c5 61a8ede0
+time=0.155000
+filter_io=58562
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=aacaf9fe 61a8ede0
+second_pair=bb36f6c5 61a8ede0
+time=0.135000
+filter_io=58562
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=0.153000
+filter_io=58416
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=0.157000
+filter_io=58416
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=ccba3d7703789 63752963066d2
+second_pair=ccba3d7703789 63752963066d2
+time=37.521000
+filter_io=31619318
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=4.211000
+filter_io=58634
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=0.142000
+filter_io=58634
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=ccba3d7703789 63752963066d2
+second_pair=ccba3d7703789 63752963066d2
+time=36.660000
+filter_io=31620000
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=ccba3d7703789 63752963066d2
+second_pair=ccba3d7703789 63752963066d2
+time=37.118000
+filter_io=31620001
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=24
+first_pair=a6d7d2 bc8310
+second_pair=758a80 bc8310
+time=0.064000
+filter_io=5142
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=24
+first_pair=a6d7d2 bc8310
+second_pair=758a80 bc8310
+time=0.079000
+filter_io=5142
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=40
+first_pair=0c99983f02 8261bcdf75
+second_pair=0c99983f02 8261bcdf75
+time=3.665000
+filter_io=2899001
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=40
+first_pair=0c99983f02 8261bcdf75
+second_pair=0c99983f02 8261bcdf75
+time=4.055000
+filter_io=2899001
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=40
+first_pair=0c99983f02 8261bcdf75
+second_pair=0c99983f02 8261bcdf75
+time=4.253000
+filter_io=2898754
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=40
+first_pair=0c99983f02 8261bcdf75
+second_pair=0c99983f02 8261bcdf75
+time=3.442000
+filter_io=2898754
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=40
+first_pair=0c99983f02 8261bcdf75
+second_pair=0c99983f02 8261bcdf75
+time=4.292000
+filter_io=2899002
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=24
+first_pair=a6d7d2 bc8310
+second_pair=758a80 bc8310
+time=78.180000
+filter_io=5284
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=24
+first_pair=a6d7d2 bc8310
+second_pair=758a80 bc8310
+time=0.066000
+filter_io=5284
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=24
+first_pair=05c6ba 26b0fb
+second_pair=05c6ba 26b0fb
+time=0.074000
+filter_io=8002
+array_io=4
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=24
+first_pair=05c6ba 26b0fb
+second_pair=05c6ba 26b0fb
+time=0.066000
+filter_io=8002
+array_io=4
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=24
+first_pair=05c6ba 26b0fb
+second_pair=05c6ba 26b0fb
+time=0.075000
+filter_io=8002
+array_io=4
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=24
+first_pair=a6d7d2 bc8310
+second_pair=758a80 bc8310
+time=0.063000
+filter_io=5284
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=40
+first_pair=0c99983f02 8261bcdf75
+second_pair=0c99983f02 8261bcdf75
+time=3.363000
+filter_io=2899002
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=40
+first_pair=0c99983f02 8261bcdf75
+second_pair=0c99983f02 8261bcdf75
+time=126.448000
+filter_io=2899002
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=40
+first_pair=0c99983f02 8261bcdf75
+second_pair=0c99983f02 8261bcdf75
+time=55.038000
+filter_io=2899002
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=40
+first_pair=0c99983f02 8261bcdf75
+second_pair=0c99983f02 8261bcdf75
+time=8.405000
+filter_io=2898754
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=24
+first_pair=a6d7d2 bc8310
+second_pair=758a80 bc8310
+time=34.694000
+filter_io=5135
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=24
+first_pair=a6d7d2 bc8310
+second_pair=758a80 bc8310
+time=0.078000
+filter_io=5142
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=28
+first_pair=5f5a679 5b7fe78
+second_pair=f8848ee 5b7fe78
+time=0.084000
+filter_io=12586
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=36
+first_pair=64c3cd4ba 20872406e
+second_pair=64c3cd4ba 20872406e
+time=0.127000
+filter_io=36631
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=40
+first_pair=c2f0fc6b3f bf32071de8
+second_pair=c2f0fc6b3f bf32071de8
+time=4.597000
+filter_io=2898971
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=44
+first_pair=6f80e0a9db2 eb2e5e99be1
+second_pair=26b9f1421e8 eb2e5e99be1
+time=4.246000
+filter_io=2786557
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=42.797000
+filter_io=31619732
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=090ae9add1c20 c8b7e1f55a001
+second_pair=090ae9add1c20 c8b7e1f55a001
+time=41.946000
+filter_io=31619801
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=38.611000
+filter_io=31619732
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=56
+first_pair=75e6a162f220d9 8c92287974757b
+second_pair=9dfc299fee7ea8 8c92287974757b
+time=96.938000
+filter_io=80049363
+array_io=1
+
+Array size limit reached! No collision found! Program ends!
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=fcd83c56 ae2241e9
+second_pair=fcd83c56 ae2241e9
+time=0.116000
+filter_io=58641
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=fcd83c56 ae2241e9
+second_pair=fcd83c56 ae2241e9
+time=81.553000
+filter_io=58641
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=0.124000
+filter_io=58635
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=0.125000
+filter_io=58635
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+
+time=42.291000
+filter_io=31619727
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+
+time=39.227000
+filter_io=31619727
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=66.559000
+filter_io=31619732
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=fcd83c56 ae2241e9
+second_pair=fcd83c56 ae2241e9
+time=0.099000
+filter_io=58641
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=0.128000
+filter_io=58635
+array_io=1
+
+Array size limit reached! No collision found! Program ends!
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+
+time=37.020000
+filter_io=31619727
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=37.193000
+filter_io=31619732
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=42.159000
+filter_io=31619732
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=35.313000
+filter_io=31619732
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=0.183000
+filter_io=58635
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=0.093000
+filter_io=58635
+array_io=1

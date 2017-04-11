@@ -156,6 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="bloom_filter.hpp" />
+    <ClInclude Include="main.hpp" />
     <ClInclude Include="sha256.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="ThreadPool.h" />
