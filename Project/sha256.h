@@ -21,7 +21,7 @@ protected:
 	void Transform(const unsigned char *message, unsigned int block_nb);
 	void Update(const unsigned char *message, unsigned int len);
 	void Final(unsigned char *digest);
-	void SHA256::InitValues();
+	void InitValues();
 
 public:
 	SHA256();
