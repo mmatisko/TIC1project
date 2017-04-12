@@ -2549,3 +2549,55 @@ second_pair=1d5bd42e 69929d86
 time=0.089000
 filter_io=58635
 array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000010
+lenght=56
+first_pair=75e6a162f220d9 8c92287974757b
+second_pair=9dfc299fee7ea8 8c92287974757b
+time=49.704993
+filter_io=80049363
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000010
+lenght=56
+first_pair=75e6a162f220d9 8c92287974757b
+second_pair=9dfc299fee7ea8 8c92287974757b
+time=50.059183
+filter_io=80049363
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000010
+lenght=56
+first_pair=75e6a162f220d9 8c92287974757b
+second_pair=9dfc299fee7ea8 8c92287974757b
+time=50.210263
+filter_io=80049363
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000010
+lenght=56
+first_pair=75e6a162f220d9 8c92287974757b
+second_pair=9dfc299fee7ea8 8c92287974757b
+time=52.716612
+filter_io=80049363
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000010
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=19.797961
+filter_io=31619732
+array_io=1
+
+Array size limit reached! No collision found! Program ends!
