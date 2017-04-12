@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <fstream>
 #include <string>
-
+#include <algorithm>
 #include "main.hpp"
 
 using namespace std;
@@ -68,7 +68,7 @@ void InitThreadPool() {
 }
 
 /*
- * Function for iteration over array of hashes in uint64_t 
+ * Function for iteration over array of hashes in uint64_t
  */
 function<void(short)> ArrayIteration = [](short order) {
 	//short int order = i;
@@ -85,7 +85,7 @@ function<void(short)> ArrayIteration = [](short order) {
 			string* baseS = new string[mod];
 			InitBloomFilter(mod * multiplier);
 			filter_io -= mod;
-			
+
 			for (int k = 0; k < mod; ++k) { //compute hashes from tails
 				hashString = hasher->ComputeHash(hashString).substr(0, bitLength / 4);
 				filter->insert(hashString);
@@ -122,7 +122,7 @@ function<void(short)> ArrayIteration = [](short order) {
 void ChainingRoutine() {
 	string back;
 	for (;;) {
-		
+
 		hashString = hasher->ComputeHash(hashString).substr(0, bitLength / 4);
 		hashInt = StringToInt(hashString);
 
@@ -130,7 +130,7 @@ void ChainingRoutine() {
 			cout << "filter_io: " << to_string(filter_io / 1000000) << endl;
 			timer->LapStop();
 		}
-		
+
 		if (filter->contains(hashInt))
 		{
 			++array_io;
@@ -148,7 +148,7 @@ void ChainingRoutine() {
 			logString = "\nArray size limit reached! No collision found! Program ends!\n";
 			return;
 		}
-		
+
 		if (filter_io % mod == 0) {
 			base[filter_io / mod] = hashInt;
 			filter->insert(hashInt);
@@ -170,7 +170,7 @@ void Cleanup() {
 		logString += timer->GetStringTime() + "\nfilter_io=" + to_string(filter_io)
 				   + "\narray_io=" + to_string(array_io) + "\n";
 	writelogString(logString);
-	delete pool; 
+	delete pool;
 	delete hasher;
 	delete filter;
 	//delete[] base;
