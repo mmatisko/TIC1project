@@ -84,7 +84,7 @@ inline void SHA256::InitValues()
 std::string SHA256::ComputeHash(std::string input)
 {
 	InitValues();
-	Update(reinterpret_cast<const unsigned char*>(input.c_str()), unsigned int(input.length()));
+	Update(reinterpret_cast<const unsigned char*>(input.c_str()), uint(input.length()));
 	Final(digest);
 
 	char buf[2 * DIGEST_SIZE + 1];
