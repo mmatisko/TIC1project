@@ -31,9 +31,6 @@ string *base;
 // size of array 
 uint64_t capacity;
 
-// capacity - array size
-//uint64_t hashInt;
-
 // filter_io - number of array_io over filter
 uint64_t filter_io = 0;
 

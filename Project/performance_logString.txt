@@ -2549,3 +2549,33 @@ second_pair=1d5bd42e 69929d86
 time=0.089000
 filter_io=58635
 array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=40
+first_pair=cc3dd914b0 c2f0fc6b3f
+second_pair=251ca3ba0d c2f0fc6b3f
+time=3.248000
+filter_io=2898970
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=0.083000
+filter_io=58635
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000100
+lenght=32
+first_pair=32977540 69929d86
+second_pair=1d5bd42e 69929d86
+time=-0.147000
+filter_io=58635
+array_io=1

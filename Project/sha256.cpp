@@ -1,5 +1,8 @@
 #include <cstring>
 #include <fstream>
+#ifdef __linux
+	#include <algorithm>
+#endif
 
 #include "sha256.h"
 
