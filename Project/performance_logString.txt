@@ -2579,3 +2579,25 @@ second_pair=1d5bd42e 69929d86
 time=-0.147000
 filter_io=58635
 array_io=1
+
+input=21c495a9f4040
+threads=1+4
+filter_accuracy=0.000010
+lenght=52
+first_pair=21c495a9f4040 6d10a997db25a
+second_pair=894cea8cbe536 6d10a997db25a
+time=46.915000
+filter_io=30656319
+array_io=1
+
+Array size limit reached! No collision found! Program ends!
+
+input=4b06d366c0901de
+threads=1+4
+filter_accuracy=0.000010
+lenght=60
+first_pair=4b06d366c0901de 5001ded5444ff4f
+second_pair=6efcc06699bc0cc 5001ded5444ff4f
+time=780.718000
+filter_io=814438435
+array_io=1

@@ -73,6 +73,9 @@ bloom_filter *filter;
 // enable logging
 bool logging = false;
 
+// enable ringMode - will write input to base array
+bool ringMode = false;
+
 
 // Main function of programme
 int main(int argc, char* argv[]);

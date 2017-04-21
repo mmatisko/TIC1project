@@ -1,7 +1,10 @@
 ﻿#include <iostream>
 #include <fstream>
 #include <string>
-
+#include <exception>
+#ifdef __linux
+#include <algorithm>
+#endif
 #include "main.hpp"
 
 using namespace std;
@@ -11,9 +14,14 @@ using namespace std;
  */
 void writelogString(string text) {
 	ofstream logStringFile;
-	logStringFile.open("performance_logString.txt", ios::out | ios::app);
-	logStringFile << text;
-	logStringFile.close();
+	try {
+		logStringFile.open("performance_logString.txt", ios::out | ios::app);
+		logStringFile << text;
+		logStringFile.close();
+	} catch(exception e)
+	{
+		throw new exception("Log file exception, cannot open or close file.");
+	}
 	cout << text;
 }
 
@@ -53,21 +61,27 @@ function<void(short)> ArrayIteration = [](short order) {
 			hashString = base[j - 1];
 			delete filter;
 			delete[] base;
-			base = new string[mod];
+			base = new string[mod + 1];
 			InitBloomFilter(mod * multiplier);
 			filter_io -= mod;
+			int k = 0;
 			
-			for (int k = 0; k < mod; ++k) { //compute hashes from tails
+			if (ringMode) {
+				base[0] = hashString;
+				++k;
+			}
+			
+			for (k; k < mod + 1;) { //compute hashes from tails
 				hashString = hasher->ComputeHash(hashString).substr(0, bitLength / 4);
 				filter->insert(hashString);
-				base[k] = hashString;
+				base[k++] = hashString;
 			}
 
 			hashString = backupString;
-			for (int k = 0; k < 2*mod; ++k) { //compute and compare hashes from ring with hashes from tail
+			for (k = 0; k < 2 * mod; ++k) { //compute and compare hashes from ring with hashes from tail
 				hashString = hasher->ComputeHash(hashString).substr(0, bitLength / 4);
 				if (filter->contains(hashString)) {
-					for (int i = 0; i < 2*mod; ++i)
+					for (int i = 0; i < 2 * mod; ++i)
 					{
 						++filter_io;
 						if (hashString == base[i]) {
@@ -91,6 +105,13 @@ function<void(short)> ArrayIteration = [](short order) {
  */
 void ChainingRoutine() {
 	string back;
+
+	if(ringMode)
+	{
+		++filter_io;
+		base[0] = hashString;
+	}
+
 	for (;;) {
 		hashString = hasher->ComputeHash(hashString).substr(0, bitLength / 4);
 
@@ -162,6 +183,7 @@ void InitVariables(int argc, char* argv[])
 		case 'c': {capacity = atoll(argv[++i]) * 1000000; break;}
 		case 't': {threads = atoi(argv[++i]); break;}
 		case 'l': {logging = true; break;}
+		case 'r': {ringMode = true; break; }
 		case 'm': {multiplier = atoi(argv[++i]); break;}
 		case 'n': {mod = atoi(argv[++i]); break;}
 		default: ;
