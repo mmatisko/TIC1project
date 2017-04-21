@@ -23,13 +23,12 @@ every 10th M of filter IO operations - console and logFile
 every 5th K of array operations - console and logFile   
 
 USAGE Table:  
-  
 Bit lenght - capacity - saving step  
   
-<=36b	      10M	      1 000  
-40-48	     100M	     10 000  
-52-56	   1,000M     100 000  
-60-64	  50,000M	    100 000  
-68-76	 500,000M	  1 000 000  
-80    ????????M 	??????????  
+<=36b........10M.......1 000  
+40-48.......100M......10 000  
+52-56.....1,000M.....100 000  
+60-64....50,000M.....100 000  
+68-76...500,000M...1 000 000  
+80b=>..????????M..??????????  
 
