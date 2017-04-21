@@ -12,15 +12,24 @@ Project.exe (Program name...of course)
 -l (logging) [false]  
 -m \<multiplier of filter size>  
 -n \<modulo of writing hash> [10] (tested just with 10/100/1000, should work with others like 20,50, but need to test)
-  
-Array of filters principle:  
-Capacity (size of array) is divided by number of threads and multiplicated by multiplier (because of speed),  
-to get final size of one array, if number of hash get size of filter, programme will create another filter.   
+-r (ringMode) [false]
+
+Ring mode - used for testing/searching for lenght collision ring, need to use when you set input first collision hash
      
-full example: Project.exe -i ahoj -b 56 -p 0.005(5E-3) -c 100 -m 4 -n -10 -t 4 -l     
+full example: Project.exe -i ahoj -b 56 -p 0.005(5E-3) -c 100 -n 10000 -m 4 -n -10 -t 4 -l (-r)   
   
 Logging:   
 every 10th M of filter IO operations - console and logFile   
 every 5th K of array operations - console and logFile   
-lenght of filling every filter in array marked as "lap" - to console only   
+
+USAGE Table:  
+  
+Bit lenght - capacity - saving step  
+  
+<=36b	      10M	      1 000  
+40-48	     100M	     10 000  
+52-56	   1,000M     100 000  
+60-64	  50,000M	    100 000  
+68-76	 500,000M	  1 000 000  
+80    ????????M 	??????????  
 
