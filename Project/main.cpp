@@ -26,8 +26,8 @@ void writelogString(string text) {
 }
 
 /*
-*  Initalize parameters for bloom filter
-*/
+ * Initalize parameters for bloom filter
+ */
 void InitBloomFilter(uint64_t count) {
 	bloom_parameters params;
 	params.projected_element_count = count;
@@ -38,9 +38,9 @@ void InitBloomFilter(uint64_t count) {
 }
 
 /*
-*  Initalize parameters for thread pool
-*  Start programme timer
-*/
+ * Initalize parameters for thread pool
+ * Start programme timer
+ */
 void InitThreadPool() {
 	pool = new ThreadPool(threads);
 	logString = "\ninput=" + hashString + "\nthreads=1+" + to_string(threads) + "\n" + "filter_accuracy=" + to_string(falseProbability) + "\n";
@@ -99,9 +99,9 @@ function<void(short)> ArrayIteration = [](short order) {
 };
 
 /*
- *  Searching routine in filter
- *  If positive hashInt from filter, call iteration of array,
- *  if filter_io reached filter size, programm ends
+ * Searching routine in filter
+ * If positive hashInt from filter, call iteration of array,
+ * if filter_io reached filter size, programm ends
  */
 void ChainingRoutine() {
 	string back;
@@ -155,8 +155,8 @@ void ChainingRoutine() {
 }
 
 /*
-* Function for clean memory and write log string
-*/
+ * Function for clean memory and write log string
+ */
 void Cleanup() {
 	pool->JoinAll();
 	writelogString(logString);
@@ -164,12 +164,12 @@ void Cleanup() {
 	delete hasher;
 	delete filter;
 	delete[] base;
-	system("PAUSE");
+	getchar();
 }
 
 /*
-*  Initalize system variables from cmd arguments
-*/
+ * Initalize system variables from cmd arguments
+ */
 void InitVariables(int argc, char* argv[])
 {
 	threads = thread::hardware_concurrency();
@@ -193,18 +193,6 @@ void InitVariables(int argc, char* argv[])
 	hasher = new SHA256();
 }
 
-void test()
-{
-	string input = "ahoj";
-	hasher = new SHA256();
-	for(int i = 0; i < 58636; ++i)
-	{
-		input = hasher->ComputeHash(input).substr(0, 8);
-	}
-	cout << input << endl;
-	getchar();
-}
-
 /*
  * Main function of programme
  */
@@ -214,6 +202,5 @@ int main(int argc, char* argv[]) {
 	InitThreadPool();
 	ChainingRoutine();
 	Cleanup();
-	//test();
 	return 0;
 }

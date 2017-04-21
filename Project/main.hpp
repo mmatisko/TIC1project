@@ -1,12 +1,21 @@
 #pragma once
 
-// adapted to object oriented library, source: http://www.zedwood.com/article/cpp-sha256-function
+/*
+ *adapted to object oriented library
+ *source: http://www.zedwood.com/article/cpp-sha256-function
+ */
 #include "sha256.h"
 
-// removed redundant statements, source: https://github.com/ArashPartow/bloom
+/*
+ *removed redundant statements
+ *source: https://github.com/ArashPartow/bloom
+ */
 #include "bloom_filter.hpp"
 
-// source: https://github.com/stfx/ThreadPool2
+/*
+ *threadpool library used for array iterating
+ *source: https://github.com/stfx/ThreadPool2
+ */
 #include "ThreadPool.h"
 
 // small custom library for measuring time of running programme
@@ -83,42 +92,41 @@ int main(int argc, char* argv[]);
 // Initalize system variables from cmd arguments
 void InitVariables(int argc, char* argv[]);
 
-//Function for clean memory and write log string
+/*
+ *Function for clean memory and write log string
+ */
 void Cleanup();
 
 /*
-*  Searching routine in filter
-*  If positive hashInt from filter, call iteration of array,
-*  if filter_io reached filter size, programm ends
-*/
+ *  Searching routine in filter
+ *  If positive hashInt from filter, call iteration of array,
+ *  if filter_io reached filter size, programm ends
+ */
 void ChainingRoutine();
 
-//Function for iteration all filters in filter array
-//void FindInFilter();
-
 /*
-*  Initalize parameters for thread pool
-*  Start programme timer
-*/
+ * Initalize parameters for thread pool
+ * Start programme timer
+ */
 void InitThreadPool();
 
-// Initalize parameters for bloom filter
-void InitBloomFilter();
+/* 
+ * Initalize parameters for bloom filter
+ */
+void InitBloomFilter(uint64_t count);
 
-// Function for converting hash stored in uint64 to string
-uint64_t StringToInt(string text);
-
-// Function for converting hash stored in uint64 to string
-string IntToString(uint64_t number);
-
-// Logging function used for write log data to console & log file
+/*
+ *Logging function used for write log data to console & log file
+ */
 void writelogString(string text);
 
 /*
-* Function for iteration over one filter of uint64_t items in filter array
-*/
+ * Function for iteration over one filter of uint64_t items in filter array
+ */
 extern function<void(short)> FilterIteration;
 
-//Function for iteration over array of hashes in uint64_t
+/*
+ *Function for iteration over array of hashes in uint64_t
+ */
 extern function<void(short)> ArrayIteration;
 #pragma once
