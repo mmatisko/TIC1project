@@ -1,3 +1,13 @@
+input=abc
+threads=1+4
+filter_accuracy=0.000010
+lenght=68
+first_pair=3d3a41da47ae18c6f 41511b06dc097aa99
+second_pair=10a950618c1495adc 41511b06dc097aa99
+time=36084.825000
+filter_io=47253247840
+array_io=1
+
 input=ahoj
 threads=1+4
 filter_accuracy=0.000010

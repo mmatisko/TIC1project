@@ -1,3 +1,13 @@
+input=abc
+threads=1+4
+filter_accuracy=0.000010
+lenght=68
+first_pair=3d3a41da47ae18c6f 41511b06dc097aa99
+second_pair=10a950618c1495adc 41511b06dc097aa99
+time=36084.825000
+filter_io=47253247840
+array_io=1
+
 input=ahoj
 threads=1+4
 filter_accuracy=0.000010
@@ -736,4 +746,54 @@ first_pair=622a0a1fb5e7e030 cc21b762fad477c0
 second_pair=344ab234308899be cc21b762fad477c0
 time=3953.370000
 filter_io=5386735995
+array_io=1
+
+input=ahoj
+threads=1+4
+filter_accuracy=0.000010
+lenght=64
+first_pair=78b8e3fc49fd277b 4dc99f7d2c9fb35d
+second_pair=066197d72393fbb9 4dc99f7d2c9fb35d
+time=3447.629000
+filter_io=4667713406
+array_io=1
+
+input=abc
+threads=1+4
+filter_accuracy=0.000010
+lenght=64
+first_pair=67660a2f504f0885 e072732624173fe8
+second_pair=44d59b34877965fa e072732624173fe8
+time=1285.269000
+filter_io=1740539242
+array_io=1
+
+input=hello
+threads=1+4
+filter_accuracy=0.000010
+lenght=64
+first_pair=c99206942576dc0c fafe78e22a729add
+second_pair=e26fe9c4534f3f51 fafe78e22a729add
+time=4173.297000
+filter_io=5643764306
+array_io=1
+
+input=common
+threads=1+4
+filter_accuracy=0.000010
+lenght=64
+first_pair=67660a2f504f0885 e072732624173fe8
+second_pair=44d59b34877965fa e072732624173fe8
+time=1683.271000
+filter_io=2279927131
+array_io=1
+
+input=randominput
+threads=1+4
+filter_accuracy=0.000010
+lenght=64
+first_pair=c944e7edb8dc791a 12e59d2667daf686
+second_pair=5b71a695f44deb19 12e59d2667daf686
+time=4172.590000
+filter_io=5650943497
 array_io=1
